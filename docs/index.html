@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ホリエモンAI学校 介護校 - マーケティング概要</title>
+  <meta name="description" content="ホリエモンAI学校 介護校のサービス概要、ターゲット、USP、戦略、コンテンツ計画、KPIを構造的に整理した要約ページ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1e1b16;
+      --muted: #615a50;
+      --paper: #f7f1e6;
+      --cream: #f2e8d8;
+      --accent: #e85d2a;
+      --accent-dark: #b9431d;
+      --teal: #2b6f6c;
+      --mint: #e1f0e7;
+      --shadow: 0 16px 40px rgba(30, 27, 22, 0.18);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #fff7ea 0%, #f9efe3 35%, #f4e6d2 70%, #f0dfc6 100%);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: relative;
+      padding: 60px 8vw 40px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(232, 93, 42, 0.12), rgba(43, 111, 108, 0.2));
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(232, 93, 42, 0.18);
+      top: -220px;
+      right: -140px;
+      z-index: -1;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .hero {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin: 0 0 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .hero-card {
+      background: var(--paper);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .stats {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed rgba(30, 27, 22, 0.2);
+      padding-bottom: 10px;
+    }
+
+    .stat span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    main {
+      padding: 0 8vw 80px;
+      display: grid;
+      gap: 48px;
+    }
+
+    section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 22px 46px rgba(30, 27, 22, 0.1);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    section h2 {
+      font-family: "Fraunces", serif;
+      margin-top: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 120px 1fr;
+      align-items: start;
+    }
+
+    .timeline-item span {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(232, 93, 42, 0.14);
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .kpi-table th,
+    .kpi-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.08);
+      text-align: left;
+    }
+
+    .kpi-table th {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .cta {
+      background: linear-gradient(120deg, rgba(232, 93, 42, 0.15), rgba(43, 111, 108, 0.15));
+      display: grid;
+      gap: 16px;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 8vw 60px;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding: 40px 6vw 24px;
+      }
+
+      main {
+        padding: 0 6vw 60px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="#overview">Overview</a>
+      <a href="#persona">Persona</a>
+      <a href="#usp">USP</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#content">Content</a>
+      <a href="#kpi">KPI</a>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="pill">Marketing Summary</p>
+        <h1>ホリエモンAI学校 介護校<br />マーケティング全体像</h1>
+        <p>介護・在宅医療に特化したAI研修サービスの価値、顧客像、競合優位性、施策、KPIをひと目で理解できる構造で整理しました。</p>
+      </div>
+      <div class="hero-card">
+        <h3>主要実績ハイライト</h3>
+        <div class="stats">
+          <div class="stat">導入企業数 <span>200社+</span></div>
+          <div class="stat">受講者数 <span>2,000人+</span></div>
+          <div class="stat">助成金活用 <span>最大75%助成</span></div>
+          <div class="stat">講座数 <span>240講座+</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <p class="pill">Service Overview</p>
+      <h2>サービスコンセプトと提供価値</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>ワンライナー</h3>
+          <p>介護・在宅医療向けに、AI導入から運用・定着まで段階的に支援するオンライン研修スクール。</p>
+        </div>
+        <div class="card">
+          <h3>バリュープロポジション</h3>
+          <p>AI活用人材を社内で育て、業務改善まで伴走。未経験者が安心して継続できる設計。</p>
+        </div>
+        <div class="card">
+          <h3>3本柱</h3>
+          <p>動画講義（240講座）、チャットサポート、月次伴走MTGで「学び→実践→改善」を一気通貫。</p>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top: 22px;">
+        <div class="timeline-item">
+          <span>1-2ヶ月</span>
+          <div>基礎学習と資格試験で基盤を作る。</div>
+        </div>
+        <div class="timeline-item">
+          <span>3-6ヶ月</span>
+          <div>選択コースで現場課題に合わせたAI活用を拡張。</div>
+        </div>
+        <div class="timeline-item">
+          <span>7ヶ月-</span>
+          <div>業務改善フェーズで課題発見〜導入サイクルを回す。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <p class="pill">Target Persona</p>
+      <h2>優先ペルソナ：介護法人経営者</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>基本像</h3>
+          <p>45歳前後、1〜3施設を運営。経営と現場を兼務し、慢性的な人手不足に悩む。</p>
+        </div>
+        <div class="card">
+          <h3>深層の不安</h3>
+          <p>「時代に取り残されるのが怖い」「他社はAIで進化しているのでは？」。</p>
+        </div>
+        <div class="card">
+          <h3>最大の障壁</h3>
+          <p>AI導入の具体的な着手点が分からず、時間も確保できない。</p>
+        </div>
+      </div>
+      <h3 style="margin-top: 26px;">購買トリガー</h3>
+      <div class="taglist">
+        <span class="tag">同業者の導入事例</span>
+        <span class="tag">助成金75%オフ</span>
+        <span class="tag">具体的成果の可視化</span>
+        <span class="tag">ホリエモンの発信</span>
+      </div>
+    </section>
+
+    <section id="usp">
+      <p class="pill">USP & Advantage</p>
+      <h2>競合優位性の柱</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>介護特化</h3>
+          <p>議事録、報告書、送迎表など介護現場の課題に直結する実践例を提供。</p>
+        </div>
+        <div class="card">
+          <h3>伴走型支援</h3>
+          <p>チャットとMTGで「学んで終わり」を防止。業務改善まで一緒に走る。</p>
+        </div>
+        <div class="card">
+          <h3>助成金活用</h3>
+          <p>人材開発支援助成金で実質月5,833円から。費用不安を解消。</p>
+        </div>
+        <div class="card">
+          <h3>ブランド信頼</h3>
+          <p>堀江貴文監修と業界評価No.1の実績で信頼を確保。</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h3>メインUSP</h3>
+        <p><strong>介護・在宅医療の現場で使えるAIスキルを、業務改善まで伴走サポート。助成金で最大75%オフ。</strong></p>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <p class="pill">Marketing Strategy</p>
+      <h2>戦略全体像とチャネル設計</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>ミッション</h3>
+          <p>介護業界にAI活用人材を育成し、業務効率化と人材不足解消に貢献する。</p>
+        </div>
+        <div class="card">
+          <h3>ビジョン</h3>
+          <p>介護業界のDX推進における第一想起ブランドになる。</p>
+        </div>
+        <div class="card">
+          <h3>成長目標</h3>
+          <p>導入企業数500社、受講者数5,000人を目指す。</p>
+        </div>
+      </div>
+      <h3 style="margin-top: 26px;">チャネル戦略の核</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>オウンド</h3>
+          <p>SEO最適化、LP/事例ページ、メールナーチャリング。</p>
+        </div>
+        <div class="card">
+          <h3>アーンド</h3>
+          <p>プレスリリース、業界誌掲載、口コミ・紹介の強化。</p>
+        </div>
+        <div class="card">
+          <h3>ペイド</h3>
+          <p>検索広告、SNS広告、業界誌出稿でリーチを拡大。</p>
+        </div>
+        <div class="card">
+          <h3>パートナー</h3>
+          <p>社労士・介護団体・ソフトベンダーとの連携。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <p class="pill">Content & Campaigns</p>
+      <h2>コンテンツとキャンペーンの設計図</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>コンテンツピラー</h3>
+          <p>AI活用ノウハウ / 助成金情報 / 介護DX事例 / 業界トレンド。</p>
+        </div>
+        <div class="card">
+          <h3>動画戦略</h3>
+          <p>講義サンプル・事例・AI活用Tips・ニュースを月次/週次で発信。</p>
+        </div>
+        <div class="card">
+          <h3>SNS運用</h3>
+          <p>Xで毎日Tips、Facebookで事例、Instagramでビジュアル訴求。</p>
+        </div>
+        <div class="card">
+          <h3>主要キャンペーン</h3>
+          <p>助成金セミナー、無料AI診断、事例ウェビナー、年度末特典。</p>
+        </div>
+      </div>
+      <h3 style="margin-top: 26px;">ターゲットキーワード</h3>
+      <div class="taglist">
+        <span class="tag">介護 AI 研修</span>
+        <span class="tag">介護 DX 人材育成</span>
+        <span class="tag">介護施設 業務効率化</span>
+        <span class="tag">ホリエモン AI学校</span>
+        <span class="tag">助成金 介護</span>
+      </div>
+    </section>
+
+    <section id="kpi">
+      <p class="pill">KPI & Metrics</p>
+      <h2>ファネル別KPI設計</h2>
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>フェーズ</th>
+            <th>代表KPI</th>
+            <th>目的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>認知</td>
+            <td>Web訪問数 / SNSフォロワー / ブランド検索数</td>
+            <td>市場での想起率を高める</td>
+          </tr>
+          <tr>
+            <td>興味</td>
+            <td>滞在時間 / 直帰率 / コンテンツ閲覧数</td>
+            <td>サービス理解を深める</td>
+          </tr>
+          <tr>
+            <td>検討</td>
+            <td>資料DL / 問い合わせ / セミナー参加</td>
+            <td>リード獲得と比較検討</td>
+          </tr>
+          <tr>
+            <td>決定</td>
+            <td>社労士面談 / 成約数 / 成約率</td>
+            <td>契約獲得を最大化</td>
+          </tr>
+          <tr>
+            <td>継続</td>
+            <td>継続率 / 追加受講率 / NPS</td>
+            <td>LTV向上と紹介促進</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>次のアクションへ</h2>
+        <p>本ページは「構造化した戦略の要約」です。運用に移す際は、各フェーズのKPIを実数値で埋め、週次・月次レポートで進捗を可視化してください。</p>
+      </div>
+      <div class="card">
+        <h3>運用チェックリスト</h3>
+        <ul>
+          <li>リード獲得コンテンツの公開頻度</li>
+          <li>助成金セミナーの集客数</li>
+          <li>事例コンテンツの更新</li>
+          <li>ファネル転換率の週次レビュー</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ホリエモンAI学校 介護校 マーケティング概要（2025年1月版）
+  </footer>
+</body>
+</html>
