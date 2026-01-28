@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KPI設計 再評価レポート - ホリエモンAI学校 介護校</title>
+  <meta name="description" content="ホリエモンAI学校 介護校のデジタルマーケティングKPI設計を、Analytics Tracking観点からプロが再評価。事業モデルに即したファネル・計測基盤・予算設計。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1e1b16;
+      --muted: #615a50;
+      --paper: #f7f1e6;
+      --cream: #f2e8d8;
+      --accent: #e85d2a;
+      --accent-dark: #b9431d;
+      --teal: #2b6f6c;
+      --teal-light: #3a908c;
+      --mint: #e1f0e7;
+      --red: #c0392b;
+      --red-bg: #fdf0ee;
+      --green: #1a7a4c;
+      --green-bg: #eef8f2;
+      --blue: #2563eb;
+      --blue-bg: #eff4ff;
+      --yellow-bg: #fef9e7;
+      --shadow: 0 16px 40px rgba(30, 27, 22, 0.18);
+      --shadow-sm: 0 4px 12px rgba(30, 27, 22, 0.08);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #fff7ea 0%, #f9efe3 35%, #f4e6d2 70%, #f0dfc6 100%);
+      line-height: 1.7;
+    }
+
+    a { color: var(--teal); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      padding: 60px 8vw 40px;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(232, 93, 42, 0.12), rgba(43, 111, 108, 0.2));
+      z-index: -2;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: rgba(43, 111, 108, 0.15);
+      top: -220px; right: -140px;
+      z-index: -1;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .nav a { color: var(--muted); font-weight: 400; }
+    .nav a:hover { color: var(--ink); text-decoration: none; }
+
+    .hero {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin: 0 0 12px;
+      letter-spacing: 0.01em;
+    }
+    .hero > div > p { color: var(--muted); font-size: 1.05rem; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    /* Score Card */
+    .score-card {
+      background: var(--paper);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+      text-align: center;
+    }
+    .score-ring {
+      position: relative;
+      width: 140px; height: 140px;
+      margin: 0 auto 16px;
+    }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring .score-number {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Fraunces", serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+    }
+    .score-ring .score-label {
+      font-size: 0.75rem;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+    .score-card h3 { margin-bottom: 8px; }
+    .score-card .verdict {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Main ── */
+    main {
+      padding: 0 8vw 80px;
+      display: grid;
+      gap: 48px;
+    }
+
+    section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 22px 46px rgba(30, 27, 22, 0.1);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    section h2 {
+      font-family: "Fraunces", serif;
+      margin-top: 0;
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      margin-bottom: 20px;
+    }
+
+    h3 { margin-bottom: 12px; }
+
+    p { margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Comparison Layout ── */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .compare-bad {
+      background: var(--red-bg);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border-left: 4px solid var(--red);
+    }
+    .compare-good {
+      background: var(--green-bg);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border-left: 4px solid var(--green);
+    }
+    .compare-bad h4 { color: var(--red); margin: 0 0 8px; }
+    .compare-good h4 { color: var(--green); margin: 0 0 8px; }
+    .compare-bad p, .compare-good p { font-size: 0.92rem; margin: 0; }
+
+    /* ── Funnel Diagram ── */
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 24px 0;
+    }
+    .funnel-step {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      color: white;
+      padding: 14px 20px;
+      position: relative;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+    .funnel-step:nth-child(1) { background: var(--teal); width: 100%; border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+    .funnel-step:nth-child(2) { background: var(--teal-light); width: 85%; }
+    .funnel-step:nth-child(3) { background: var(--accent); width: 70%; }
+    .funnel-step:nth-child(4) { background: var(--accent-dark); width: 55%; }
+    .funnel-step:nth-child(5) { background: #8b4513; width: 40%; }
+    .funnel-step:nth-child(6) { background: var(--ink); width: 30%; border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+
+    .funnel-arrow {
+      width: 0; height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 10px solid rgba(30, 27, 22, 0.2);
+      margin: 2px 0;
+    }
+
+    .funnel-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .funnel-label-card {
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      border: 1px solid rgba(30, 27, 22, 0.06);
+    }
+    .funnel-label-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.9rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .funnel-label-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── Tables ── */
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 16px 0;
+    }
+    .kpi-table th, .kpi-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    .kpi-table th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: var(--cream);
+    }
+    .kpi-table tr:last-child td { border-bottom: none; }
+    .kpi-table code {
+      font-family: "IBM Plex Mono", monospace;
+      background: rgba(43, 111, 108, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: var(--teal);
+    }
+
+    /* ── Grids ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+    .card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+    .card h3 { margin-top: 0; font-size: 1.05rem; }
+    .card p { font-size: 0.92rem; color: var(--muted); }
+
+    .card-accent {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .card-accent h3 { margin-top: 0; color: white; }
+    .card-accent p { color: rgba(255,255,255,0.85); font-size: 0.92rem; }
+
+    /* ── Score Bars ── */
+    .score-bars { display: grid; gap: 14px; margin: 20px 0; }
+    .score-bar-item { display: grid; gap: 4px; }
+    .score-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .score-bar-label span:last-child { color: var(--muted); }
+    .score-bar-track {
+      height: 10px;
+      background: rgba(30, 27, 22, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 1s ease;
+    }
+    .score-bar-fill.bad { background: var(--red); }
+    .score-bar-fill.mid { background: var(--accent); }
+    .score-bar-fill.good { background: var(--green); }
+
+    /* ── Budget Calc ── */
+    .budget-calc {
+      background: var(--blue-bg);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 20px 0;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+    .budget-calc h4 {
+      color: var(--blue);
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 0.92rem;
+      border-bottom: 1px dashed rgba(30, 27, 22, 0.1);
+    }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row span:last-child { font-weight: 700; color: var(--blue); }
+    .calc-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-top: 2px solid var(--blue);
+      margin-top: 8px;
+    }
+
+    /* ── Tool Stack ── */
+    .tool-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      border: 1px solid rgba(30, 27, 22, 0.06);
+    }
+    .tool-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .tool-item .tool-info { font-size: 0.85rem; }
+    .tool-item .tool-name { font-weight: 600; color: var(--ink); }
+    .tool-item .tool-role { color: var(--muted); font-size: 0.8rem; }
+
+    /* ── Code Block ── */
+    .code-block {
+      background: #1e1b16;
+      color: #e8dcc8;
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    .code-block .comment { color: #7a7060; }
+    .code-block .key { color: #e85d2a; }
+    .code-block .string { color: #2b9f6c; }
+
+    /* ── UTM Table ── */
+    .utm-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 16px 0;
+    }
+    .utm-table th, .utm-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.08);
+      text-align: left;
+    }
+    .utm-table th {
+      background: var(--cream);
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+    }
+    .utm-table code {
+      font-family: "IBM Plex Mono", monospace;
+      background: rgba(43, 111, 108, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--teal);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(120deg, rgba(43, 111, 108, 0.15), rgba(232, 93, 42, 0.15));
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* ── Alert Box ── */
+    .alert {
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    .alert-warn {
+      background: var(--yellow-bg);
+      border-left: 4px solid #f39c12;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 8vw 60px;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 820px) {
+      header { padding: 40px 6vw 24px; }
+      main { padding: 0 6vw 60px; }
+      .hero { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .funnel-labels { grid-template-columns: 1fr; }
+      .score-card { max-width: 340px; margin: 0 auto; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 24px 20px; }
+      .kpi-table, .utm-table { font-size: 0.82rem; }
+      .kpi-table th, .kpi-table td,
+      .utm-table th, .utm-table td { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════ HEADER ════════════════════ -->
+  <header>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="#problem">Problem</a>
+      <a href="#funnel">Funnel</a>
+      <a href="#kpi">KPI</a>
+      <a href="#budget">Budget</a>
+      <a href="#tracking">Tracking</a>
+      <a href="#summary">Summary</a>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="pill">KPI Evaluation Report</p>
+        <h1>KPI設計 再評価レポート</h1>
+        <p>ChatGPTが提案したKPI設計を、Analytics Tracking観点から再評価。事業モデルに即したファネル設計・計測基盤・予算逆算まで再構築しました。</p>
+      </div>
+      <div class="score-card">
+        <h3>ChatGPT回答スコア</h3>
+        <div class="score-ring">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(30,27,22,0.08)" stroke-width="10" />
+            <circle cx="70" cy="70" r="58" fill="none" stroke="#c0392b" stroke-width="10"
+              stroke-dasharray="364.4" stroke-dashoffset="273.3" stroke-linecap="round" />
+          </svg>
+          <div class="score-number">
+            25
+            <span class="score-label">/ 100</span>
+          </div>
+        </div>
+        <p class="verdict">事業モデル誤認・計測設計なし・予算根拠不正確により実務適用度は低い</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════ PROBLEM ════════════════════ -->
+    <section id="problem">
+      <p class="pill">Critical Issue</p>
+      <h2>致命的な問題：事業モデルの誤認</h2>
+      <p>ChatGPTは「介護施設の入居者獲得」のKPIを設計しましたが、実際の事業は<strong>介護事業者向けAI研修サービスの販売</strong>です。売るものが違えばKPIはすべて変わります。</p>
+
+      <div class="compare">
+        <div class="compare-bad">
+          <h4>ChatGPTの認識</h4>
+          <p>介護施設を運営して入居者を集める事業<br />KPI例：入居率、見学→入居転換率、求人応募数</p>
+        </div>
+        <div class="compare-good">
+          <h4>実際の事業モデル</h4>
+          <p>介護事業者にAI研修を販売するBtoB/BtoC事業<br />KPI例：LINE登録数、面談予約数、契約転換率、LTV</p>
+        </div>
+      </div>
+
+      <h3>実際のビジネス構造</h3>
+      <div class="grid-3" style="margin-top: 12px;">
+        <div class="card">
+          <h3>売るもの</h3>
+          <p>非エンジニア向けAI研修（240講座 + 伴走サポート）</p>
+        </div>
+        <div class="card">
+          <h3>個人プラン</h3>
+          <p>入学金162,800円<br />+ 月額16,280円</p>
+        </div>
+        <div class="card">
+          <h3>法人プラン</h3>
+          <p>年310,000円/人<br />最小2名、助成金適用可</p>
+        </div>
+        <div class="card">
+          <h3>主要CTA</h3>
+          <p>LINE無料体験 / 法人面談予約 / 問い合わせフォーム</p>
+        </div>
+        <div class="card">
+          <h3>顧客</h3>
+          <p>介護法人の経営者・管理職・現場スタッフ</p>
+        </div>
+        <div class="card">
+          <h3>提供価値</h3>
+          <p>業務自動化スキル習得による生産性向上</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ SCORE DETAIL ════════════════════ -->
+    <section>
+      <p class="pill">Scoring Detail</p>
+      <h2>評価内訳</h2>
+
+      <div class="score-bars">
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>事業モデル理解</span><span>-30pts</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 20%"></div></div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>計測基盤の設計</span><span>-20pts</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 10%"></div></div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>予算の数値根拠</span><span>-15pts</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 25%"></div></div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>KPIの実用性</span><span>-10pts</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill mid" style="width: 40%"></div></div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>ファネル設計</span><span>基本構造あり</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill mid" style="width: 50%"></div></div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-label"><span>網羅性・整理力</span><span>教科書的には良い</span></div>
+          <div class="score-bar-track"><div class="score-bar-fill good" style="width: 70%"></div></div>
+        </div>
+      </div>
+
+      <div class="alert alert-warn">
+        <strong>最大の問題：</strong>計測方法（GA4/GTM/CRM）の設計がゼロ。KPIを定義しても「どう測るか」がなければ運用できません。
+      </div>
+    </section>
+
+    <!-- ════════════════════ FUNNEL ════════════════════ -->
+    <section id="funnel">
+      <p class="pill">Correct Funnel</p>
+      <h2>正しいファネル設計</h2>
+      <p>このビジネスには<strong>個人ファネル（LINE経由）</strong>と<strong>法人ファネル（面談経由）</strong>の2系統が必要です。</p>
+
+      <div class="funnel">
+        <div class="funnel-step">認知 - 広告・SEO・SNSでサイトに流入</div>
+        <div class="funnel-arrow"></div>
+        <div class="funnel-step">サイト訪問 - LP閲覧・コンテンツ回遊</div>
+        <div class="funnel-arrow"></div>
+        <div class="funnel-step">LINE登録 / 無料体験申込</div>
+        <div class="funnel-arrow"></div>
+        <div class="funnel-step">面談・商談（法人） / 体験受講（個人）</div>
+        <div class="funnel-arrow"></div>
+        <div class="funnel-step">契約・入金</div>
+        <div class="funnel-arrow"></div>
+        <div class="funnel-step">継続・LTV</div>
+      </div>
+
+      <div class="funnel-labels">
+        <div class="funnel-label-card">
+          <h4>個人ファネル</h4>
+          <p>LP訪問 → LINE友だち追加 → 24h無料体験 → 有料転換 → 月額継続</p>
+        </div>
+        <div class="funnel-label-card">
+          <h4>法人ファネル</h4>
+          <p>LP訪問 → 問い合わせ/面談予約 → 商談 → 稟議・助成金申請 → 年間契約</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ KPI ════════════════════ -->
+    <section id="kpi">
+      <p class="pill">KPI Design</p>
+      <h2>正しいKPI設計（ファネル層別）</h2>
+
+      <!-- Layer 1 -->
+      <h3 style="margin-top: 8px;">第1層：認知・集客</h3>
+      <table class="kpi-table">
+        <thead><tr><th>KPI</th><th>計測方法</th><th>判断基準</th></tr></thead>
+        <tbody>
+          <tr><td>チャネル別セッション数</td><td>GA4 <code>session_start</code> x source/medium</td><td>有効な集客経路の特定</td></tr>
+          <tr><td>新規ユーザー率</td><td>GA4 <code>first_visit</code></td><td>新規獲得の効率</td></tr>
+          <tr><td>CPM（広告出稿時）</td><td>広告管理画面</td><td>認知コスト効率</td></tr>
+          <tr><td>検索順位</td><td>Search Console</td><td>SEO進捗（「介護 AI研修」等）</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Layer 2 -->
+      <h3>第2層：興味・エンゲージメント</h3>
+      <table class="kpi-table">
+        <thead><tr><th>KPI</th><th>計測方法</th><th>判断基準</th></tr></thead>
+        <tbody>
+          <tr><td>LPスクロール深度</td><td>GA4 enhanced <code>scroll</code></td><td>ページ内容が読まれているか</td></tr>
+          <tr><td>CTA別クリック率</td><td>GTM <code>cta_clicked</code></td><td>LINE / 法人面談 / フォームの効果比較</td></tr>
+          <tr><td>動画再生率</td><td>GA4 <code>video_start</code> / <code>video_complete</code></td><td>コンテンツ訴求力</td></tr>
+          <tr><td>平均エンゲージメント時間</td><td>GA4 <code>engagement_time</code></td><td>検討度合い</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Layer 3 -->
+      <h3>第3層：リード獲得（最重要）</h3>
+      <table class="kpi-table">
+        <thead><tr><th>KPI</th><th>計測方法</th><th>判断基準</th></tr></thead>
+        <tbody>
+          <tr><td>LINE友だち追加数</td><td>LINE Official Account API + UTM</td><td>個人リード獲得量</td></tr>
+          <tr><td>無料体験開始数</td><td>LINE経由アクション計測</td><td>体験転換率</td></tr>
+          <tr><td>法人面談予約数</td><td>Google Calendar予約完了イベント</td><td>法人リード獲得量</td></tr>
+          <tr><td>フォーム送信数</td><td>GTM <code>form_submitted</code></td><td>リード獲得量</td></tr>
+          <tr><td>チャネル別CPA</td><td>広告費 / リード合計</td><td>獲得効率</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Layer 4 -->
+      <h3>第4層：商談・成約</h3>
+      <table class="kpi-table">
+        <thead><tr><th>KPI</th><th>計測方法</th><th>判断基準</th></tr></thead>
+        <tbody>
+          <tr><td>面談実施数</td><td>HubSpot CRM</td><td>商談創出量</td></tr>
+          <tr><td>面談→契約転換率</td><td>HubSpot CRM</td><td>セールス効率</td></tr>
+          <tr><td>無料体験→有料転換率（個人）</td><td>LINE + 決済システム連携</td><td>体験の質</td></tr>
+          <tr><td>平均契約人数（法人）</td><td>HubSpot CRM</td><td>案件単価</td></tr>
+          <tr><td>リードタイム</td><td>HubSpot CRM</td><td>初回接触→契約の日数</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Layer 5 -->
+      <h3>第5層：継続・LTV</h3>
+      <table class="kpi-table">
+        <thead><tr><th>KPI</th><th>計測方法</th><th>判断基準</th></tr></thead>
+        <tbody>
+          <tr><td>月次解約率（個人）</td><td>決済システム</td><td>サービス満足度</td></tr>
+          <tr><td>法人契約更新率</td><td>HubSpot CRM</td><td>継続価値</td></tr>
+          <tr><td>受講完了率</td><td>LMS（学習管理）</td><td>教育成果</td></tr>
+          <tr><td>NPS / 満足度</td><td>アンケート</td><td>推奨意向</td></tr>
+          <tr><td>LTV（個人 / 法人）</td><td>下記の計算式</td><td>投資判断</td></tr>
+        </tbody>
+      </table>
+
+      <div class="compare" style="margin-top: 20px;">
+        <div class="compare-good">
+          <h4>個人LTV計算式</h4>
+          <p>162,800円（入学金）+<br />16,280円 x 平均継続月数</p>
+        </div>
+        <div class="compare-good">
+          <h4>法人LTV計算式</h4>
+          <p>310,000円 x 平均契約人数<br />x 平均継続年数</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════ BUDGET ════════════════════ -->
+    <section id="budget">
+      <p class="pill">Budget Model</p>
+      <h2>予算逆算モデル</h2>
+
+      <div class="compare">
+        <div class="compare-bad">
+          <h4>ChatGPTの予算案の問題</h4>
+          <p>
+            Google広告 月10万円 → 根拠なし<br />
+            地域SNS広告 月5万円 → オンライン事業に地域限定不要<br />
+            求人広告 月10万円 → 集客でなく採用の話<br />
+            問合せCPA 5,000円 → BtoB研修では非現実的<br />
+            時給500円で削減効果計算 → 最低賃金以下
+          </p>
+        </div>
+        <div class="compare-good">
+          <h4>正しいアプローチ</h4>
+          <p>
+            売上目標から必要リード数を逆算<br />
+            → 業界ベンチマークCPAを適用<br />
+            → 必要広告予算を算出<br />
+            → LTV/CACで投資効率を検証
+          </p>
+        </div>
+      </div>
+
+      <div class="budget-calc">
+        <h4>逆算シミュレーション（月間売上目標 300万円の場合）</h4>
+        <div class="calc-row"><span>法人売上目標</span><span>186万円</span></div>
+        <div class="calc-row"><span>  内訳: 2社 x 3名 x 31万円</span><span></span></div>
+        <div class="calc-row"><span>個人売上目標</span><span>114万円</span></div>
+        <div class="calc-row"><span>  内訳: 7名 x 16.28万円（入学金）</span><span></span></div>
+        <div style="height: 16px"></div>
+        <div class="calc-row"><span>必要法人リード数</span><span>27件/月</span></div>
+        <div class="calc-row"><span>  面談転換率 30% → 成約率 25%</span><span></span></div>
+        <div class="calc-row"><span>法人リードCPA（業界相場）</span><span>30,000円</span></div>
+        <div class="calc-total"><span>必要広告予算（法人のみ）</span><span>810,000円/月</span></div>
+      </div>
+
+      <div class="alert alert-warn">
+        <strong>ChatGPTの「CPA 5,000円」との差異：</strong>BtoB研修サービスのリード獲得CPAは一般的に15,000〜50,000円。5,000円は消費者向けECの水準であり、このビジネスでは非現実的です。
+      </div>
+    </section>
+
+    <!-- ════════════════════ TRACKING ════════════════════ -->
+    <section id="tracking">
+      <p class="pill">Tracking Infrastructure</p>
+      <h2>計測基盤の設計</h2>
+      <p>ChatGPTの回答に完全に欠けていた「どう計測するか」を具体化します。</p>
+
+      <h3>ツールスタック</h3>
+      <div class="tool-stack">
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #e37400;">GA</div>
+          <div class="tool-info">
+            <div class="tool-name">GA4</div>
+            <div class="tool-role">サイト行動分析</div>
+          </div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #4285f4;">GT</div>
+          <div class="tool-info">
+            <div class="tool-name">GTM</div>
+            <div class="tool-role">イベント計測管理</div>
+          </div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #34a853;">SC</div>
+          <div class="tool-info">
+            <div class="tool-name">Search Console</div>
+            <div class="tool-role">SEO計測</div>
+          </div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #ff5c35;">HS</div>
+          <div class="tool-info">
+            <div class="tool-name">HubSpot CRM</div>
+            <div class="tool-role">リード・商談管理</div>
+          </div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #06c755;">LN</div>
+          <div class="tool-info">
+            <div class="tool-name">LINE Official</div>
+            <div class="tool-role">個人リード管理</div>
+          </div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-icon" style="background: #669df6;">LS</div>
+          <div class="tool-info">
+            <div class="tool-name">Looker Studio</div>
+            <div class="tool-role">ダッシュボード</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>GA4 コンバージョン設定</h3>
+      <table class="kpi-table">
+        <thead><tr><th>コンバージョン</th><th>イベント名</th><th>カウント</th></tr></thead>
+        <tbody>
+          <tr><td>LINE無料体験クリック</td><td><code>line_free_trial_clicked</code></td><td>セッション1回</td></tr>
+          <tr><td>法人面談予約完了</td><td><code>corporate_meeting_booked</code></td><td>セッション1回</td></tr>
+          <tr><td>問い合わせフォーム送信</td><td><code>inquiry_form_submitted</code></td><td>セッション1回</td></tr>
+        </tbody>
+      </table>
+
+      <h3>GTM 実装コード例</h3>
+      <div class="code-block">
+<span class="comment">// CTA別クリック計測（GTM dataLayer）</span>
+dataLayer.push({
+  <span class="key">'event'</span>: <span class="string">'cta_clicked'</span>,
+  <span class="key">'cta_type'</span>: <span class="string">'line_free_trial'</span>,
+  <span class="key">'cta_location'</span>: <span class="string">'hero'</span>
+});
+
+<span class="comment">// フォーム送信完了</span>
+dataLayer.push({
+  <span class="key">'event'</span>: <span class="string">'form_submitted'</span>,
+  <span class="key">'form_type'</span>: <span class="string">'corporate_inquiry'</span>,
+  <span class="key">'company_industry'</span>: <span class="string">'kaigo'</span>
+});
+
+<span class="comment">// LINE登録リダイレクト計測</span>
+dataLayer.push({
+  <span class="key">'event'</span>: <span class="string">'line_registration_clicked'</span>,
+  <span class="key">'source_page'</span>: <span class="string">'/kaigo'</span>
+});
+      </div>
+
+      <h3>UTMパラメータ設計</h3>
+      <table class="utm-table">
+        <thead>
+          <tr><th>チャネル</th><th>source</th><th>medium</th><th>campaign 例</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google広告</td><td><code>google</code></td><td><code>cpc</code></td><td><code>kaigo_ai_training</code></td></tr>
+          <tr><td>Facebook広告</td><td><code>facebook</code></td><td><code>paid_social</code></td><td><code>kaigo_awareness</code></td></tr>
+          <tr><td>メルマガ</td><td><code>newsletter</code></td><td><code>email</code></td><td><code>kaigo_case_study</code></td></tr>
+          <tr><td>介護メディア記事</td><td><code>carejob</code></td><td><code>referral</code></td><td><code>sponsored_article</code></td></tr>
+          <tr><td>LINE配信</td><td><code>line</code></td><td><code>social</code></td><td><code>free_trial_reminder</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════ SUMMARY ════════════════════ -->
+    <section id="summary">
+      <p class="pill">Summary</p>
+      <h2>総合比較</h2>
+
+      <table class="kpi-table">
+        <thead>
+          <tr><th>評価項目</th><th>ChatGPT</th><th>本レポート</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>事業モデル理解</strong></td>
+            <td style="color: var(--red)">誤認（介護施設運営と混同）</td>
+            <td style="color: var(--green)">AI研修サービスのBtoB/BtoC販売</td>
+          </tr>
+          <tr>
+            <td><strong>ファネル設計</strong></td>
+            <td style="color: var(--red)">汎用テンプレ</td>
+            <td style="color: var(--green)">個人(LINE)と法人(面談)の2系統</td>
+          </tr>
+          <tr>
+            <td><strong>KPI選定</strong></td>
+            <td style="color: var(--accent)">教科書的・網羅的</td>
+            <td style="color: var(--green)">意思決定に直結する指標に絞る</td>
+          </tr>
+          <tr>
+            <td><strong>計測方法</strong></td>
+            <td style="color: var(--red)">未記載</td>
+            <td style="color: var(--green)">GA4 + GTM + HubSpot具体設計</td>
+          </tr>
+          <tr>
+            <td><strong>予算根拠</strong></td>
+            <td style="color: var(--red)">根拠なし</td>
+            <td style="color: var(--green)">CPA x 必要リード数から逆算</td>
+          </tr>
+          <tr>
+            <td><strong>実装可能性</strong></td>
+            <td style="color: var(--red)">低（何をすればいいか不明）</td>
+            <td style="color: var(--green)">GTMコード・UTM設計まで具体化</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════ CTA ════════════════════ -->
+    <section class="cta-section">
+      <div>
+        <h2>次のステップ</h2>
+        <p>本レポートのKPI設計をHubSpot CRMと連携し、リアルタイムダッシュボードとして実装できます。MCP連携によりCRMデータの自動取得も可能です。</p>
+      </div>
+      <div class="card">
+        <h3>実装ロードマップ</h3>
+        <ul style="padding-left: 20px; margin: 0; font-size: 0.92rem; color: var(--muted);">
+          <li>GA4 + GTM の初期設定とイベント実装</li>
+          <li>HubSpot CRM のパイプライン設計</li>
+          <li>UTMルールの運用ガイド整備</li>
+          <li>Looker Studio ダッシュボード構築</li>
+          <li>月次KPIレビュー体制の確立</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    KPI設計 再評価レポート（2025年1月版）| <a href="index.html">マーケティング概要に戻る</a>
+  </footer>
+
+</body>
+</html>
