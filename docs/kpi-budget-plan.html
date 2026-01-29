@@ -578,111 +578,133 @@
     <!-- Funnel -->
     <section id="funnel">
       <p class="pill">Marketing Funnel</p>
-      <h2>ファネル転換率</h2>
+      <h2>ファネル転換率（3チャネル並行型）</h2>
 
       <div class="grid-2">
         <div>
           <h3>月間ファネル（目標値）</h3>
-          <div class="funnel-container">
-            <div class="funnel-stage" style="width: 100%; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 8px 8px 0 0;">
-              <div class="stage-content">
-                <span class="stage-name">サイト訪問</span>
-                <span class="stage-value">2,000</span>
-                <span class="stage-cvr">CVR 100%</span>
+          <!-- New Multi-Channel Funnel Visualization -->
+          <div style="background: var(--cream); border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px;">
+            <!-- Top: Site Visit -->
+            <div style="text-align: center; margin-bottom: 20px;">
+              <div style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 16px 40px; border-radius: 8px; font-weight: 600;">
+                <div style="font-size: 0.85rem; opacity: 0.9;">サイト訪問</div>
+                <div style="font-size: 1.5rem;">2,000</div>
               </div>
             </div>
-            <div class="funnel-arrow">▼</div>
-            <div class="funnel-stage" style="width: 85%; background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-              <div class="stage-content">
-                <span class="stage-name">LINE登録</span>
-                <span class="stage-value">80</span>
-                <span class="stage-cvr">CVR 4.0%</span>
+
+            <div style="text-align: center; color: var(--muted); margin: 12px 0;">▼ 3つのリード獲得チャネル</div>
+
+            <!-- Middle: 3 Channels -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
+              <div style="background: linear-gradient(135deg, #e85d2a, #b9431d); color: white; padding: 14px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; opacity: 0.9;">ウェビナー申込</div>
+                <div style="font-size: 1.3rem; font-weight: 700;">80</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 9件</div>
+              </div>
+              <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 14px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; opacity: 0.9;">資料請求</div>
+                <div style="font-size: 1.3rem; font-weight: 700;">60</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 6件</div>
+              </div>
+              <div style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 14px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; opacity: 0.9;">LINE登録</div>
+                <div style="font-size: 1.3rem; font-weight: 700;">80</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 4件</div>
               </div>
             </div>
-            <div class="funnel-arrow">▼</div>
-            <div class="funnel-stage" style="width: 70%; background: linear-gradient(135deg, #ec4899, #db2777);">
-              <div class="stage-content">
-                <span class="stage-name">ウェビナー参加</span>
-                <span class="stage-value">44</span>
-                <span class="stage-cvr">CVR 2.2%</span>
-              </div>
+
+            <div style="text-align: center; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; margin-bottom: 16px;">
+              <span style="font-size: 0.85rem; color: var(--muted);">リード合計: <strong style="color: var(--ink);">220</strong>（CVR 11%）</span>
             </div>
-            <div class="funnel-arrow">▼</div>
-            <div class="funnel-stage" style="width: 55%; background: linear-gradient(135deg, #f59e0b, #d97706);">
-              <div class="stage-content">
-                <span class="stage-name">商談実施</span>
-                <span class="stage-value">14</span>
-                <span class="stage-cvr">CVR 0.7%</span>
+
+            <div style="text-align: center; color: var(--muted); margin: 12px 0;">▼</div>
+
+            <!-- Bottom: Meetings & Close -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 14px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.8rem; opacity: 0.9;">商談実施</div>
+                <div style="font-size: 1.4rem; font-weight: 700;">15件</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">CVR 0.75%</div>
               </div>
-            </div>
-            <div class="funnel-arrow">▼</div>
-            <div class="funnel-stage" style="width: 40%; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 0 0 8px 8px;">
-              <div class="stage-content">
-                <span class="stage-name">成約</span>
-                <span class="stage-value">4.7件</span>
-                <span class="stage-cvr">CVR 0.24%</span>
+              <div style="background: linear-gradient(135deg, #2b6f6c, #1f5654); color: white; padding: 14px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.8rem; opacity: 0.9;">成約</div>
+                <div style="font-size: 1.4rem; font-weight: 700;">4.5件</div>
+                <div style="font-size: 0.7rem; opacity: 0.8;">CVR 0.23%</div>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <h3>各段階の転換率</h3>
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>転換ポイント</th>
-                <th class="number">目標</th>
-                <th class="number">下限</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>訪問 → LINE登録</td>
-                <td class="number">4%</td>
-                <td class="number">2.5%</td>
-              </tr>
-              <tr>
-                <td>LINE → ウェビナー申込</td>
-                <td class="number">25%</td>
-                <td class="number">20%</td>
-              </tr>
-              <tr>
-                <td>申込 → 参加</td>
-                <td class="number">55%</td>
-                <td class="number">45%</td>
-              </tr>
-              <tr>
-                <td>参加 → 商談希望</td>
-                <td class="number">20%</td>
-                <td class="number">15%</td>
-              </tr>
-              <tr>
-                <td>商談設定 → 実施</td>
-                <td class="number">80%</td>
-                <td class="number">70%</td>
-              </tr>
-              <tr>
-                <td>商談 → 成約</td>
-                <td class="number highlight-cell">30%</td>
-                <td class="number">20%</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>リード獲得チャネル別 転換率</h3>
 
-          <div class="card" style="margin-top: 20px;">
+          <!-- Webinar Channel -->
+          <div class="card" style="margin-bottom: 12px; border-left: 4px solid #e85d2a;">
+            <h4 style="margin: 0 0 8px; color: #e85d2a;">① ウェビナー経由（専用LP・申込フォーム）</h4>
+            <table class="data-table" style="margin: 0; font-size: 0.85rem;">
+              <tr><td>LP → 申込フォーム送信</td><td class="number">10%</td></tr>
+              <tr><td>申込 → 参加</td><td class="number">55%</td></tr>
+              <tr><td>参加 → 商談希望</td><td class="number">20%</td></tr>
+            </table>
+          </div>
+
+          <!-- Document Request Channel -->
+          <div class="card" style="margin-bottom: 12px; border-left: 4px solid #8b5cf6;">
+            <h4 style="margin: 0 0 8px; color: #8b5cf6;">② 資料請求経由（フォーム）</h4>
+            <table class="data-table" style="margin: 0; font-size: 0.85rem;">
+              <tr><td>訪問 → 資料請求フォーム送信</td><td class="number">3%</td></tr>
+              <tr><td>資料請求 → 商談希望</td><td class="number">10%</td></tr>
+            </table>
+          </div>
+
+          <!-- LINE Channel -->
+          <div class="card" style="margin-bottom: 12px; border-left: 4px solid #22c55e;">
+            <h4 style="margin: 0 0 8px; color: #22c55e;">③ LINE登録経由</h4>
+            <table class="data-table" style="margin: 0; font-size: 0.85rem;">
+              <tr><td>訪問 → LINE登録</td><td class="number">4%</td></tr>
+              <tr><td>LINE登録 → 商談希望</td><td class="number">5%</td></tr>
+            </table>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, var(--mint), white);">
             <h4 style="margin-top: 0;">全体CVR</h4>
             <div class="progress-container">
               <div class="progress-label">
                 <span>訪問 → 成約</span>
-                <span><strong>0.24%</strong>（許容下限: 0.15%）</span>
+                <span><strong>0.23%</strong>（許容下限: 0.15%）</span>
               </div>
               <div class="progress-bar">
-                <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, var(--teal), var(--green));"></div>
+                <div class="progress-fill" style="width: 58%; background: linear-gradient(90deg, var(--teal), var(--green));"></div>
               </div>
             </div>
-            <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">B2B法人向けの標準は0.1〜0.5%。0.24%は健全な水準。</p>
+            <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--muted);">B2B法人向けの標準は0.1〜0.5%。0.23%は健全な水準。</p>
           </div>
         </div>
+      </div>
+
+      <!-- Channel Contribution -->
+      <h3 style="margin-top: 32px;">リード獲得チャネル別 商談貢献度</h3>
+      <div class="grid">
+        <div class="card" style="text-align: center; border-top: 4px solid #e85d2a;">
+          <h4 style="margin: 0 0 8px;">ウェビナー</h4>
+          <div style="font-size: 2rem; font-weight: 700; color: #e85d2a;">47%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">80申込 → 9商談 → 2.2成約</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 4px solid #8b5cf6;">
+          <h4 style="margin: 0 0 8px;">資料請求</h4>
+          <div style="font-size: 2rem; font-weight: 700; color: #8b5cf6;">32%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">60請求 → 6商談 → 1.4成約</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 4px solid #22c55e;">
+          <h4 style="margin: 0 0 8px;">LINE登録</h4>
+          <div style="font-size: 2rem; font-weight: 700; color: #22c55e;">21%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">80登録 → 4商談 → 1.0成約</p>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <h4>ポイント：ウェビナーが最も商談貢献度が高い</h4>
+        <p>ウェビナーは全商談の47%を生み出す最重要チャネル。専用LPと申込フォームを整備し、月2回の開催を確実に実施することが成功の鍵です。資料請求フォームは検討段階の顧客を獲得でき、商談化率が高いのが特徴です。</p>
       </div>
     </section>
 
@@ -691,6 +713,59 @@
       <p class="pill">Channel Performance</p>
       <h2>チャネル別KPI</h2>
 
+      <h3>リード獲得チャネル別KPI</h3>
+      <div class="chart-container">
+        <canvas id="leadChannelChart"></canvas>
+      </div>
+
+      <table class="data-table" style="margin-top: 24px;">
+        <thead>
+          <tr>
+            <th>リード獲得チャネル</th>
+            <th class="number">月間目標</th>
+            <th class="number">商談化率</th>
+            <th class="number">商談数</th>
+            <th class="number">成約数</th>
+            <th class="number">商談貢献率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: rgba(232, 93, 42, 0.1);">
+            <td><strong>ウェビナー申込</strong></td>
+            <td class="number"><strong>80</strong></td>
+            <td class="number"><strong>11%</strong></td>
+            <td class="number highlight-cell"><strong>9</strong></td>
+            <td class="number highlight-cell"><strong>2.2</strong></td>
+            <td class="number highlight-cell"><strong>47%</strong></td>
+          </tr>
+          <tr>
+            <td>資料請求</td>
+            <td class="number">60</td>
+            <td class="number">10%</td>
+            <td class="number">6</td>
+            <td class="number">1.4</td>
+            <td class="number">32%</td>
+          </tr>
+          <tr>
+            <td>LINE登録</td>
+            <td class="number">80</td>
+            <td class="number">5%</td>
+            <td class="number">4</td>
+            <td class="number">1.0</td>
+            <td class="number">21%</td>
+          </tr>
+          <tr style="background: var(--cream); font-weight: 600;">
+            <td>合計</td>
+            <td class="number">220</td>
+            <td class="number">9%</td>
+            <td class="number">19</td>
+            <td class="number">4.5</td>
+            <td class="number">100%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: 32px;">広告チャネル別KPI</h3>
       <div class="chart-container">
         <canvas id="channelChart"></canvas>
       </div>
@@ -698,69 +773,75 @@
       <table class="data-table" style="margin-top: 24px;">
         <thead>
           <tr>
-            <th>チャネル</th>
+            <th>広告チャネル</th>
             <th class="number">月間費用</th>
-            <th class="number">リード</th>
-            <th class="number">商談</th>
-            <th class="number">成約</th>
-            <th class="number">CPA</th>
+            <th>主な獲得リード</th>
+            <th class="number">リード数</th>
+            <th class="number">CPA目安</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Google広告</td>
             <td class="number">20万円</td>
-            <td class="number">25</td>
-            <td class="number">6</td>
-            <td class="number">1.5</td>
-            <td class="number">13万円</td>
+            <td>ウェビナー・資料請求</td>
+            <td class="number">50</td>
+            <td class="number">4,000円</td>
           </tr>
           <tr>
             <td>Meta広告</td>
             <td class="number">12万円</td>
-            <td class="number">20</td>
-            <td class="number">3</td>
-            <td class="number">0.8</td>
-            <td class="number">15万円</td>
+            <td>ウェビナー・LINE</td>
+            <td class="number">40</td>
+            <td class="number">3,000円</td>
           </tr>
           <tr>
             <td>LINE広告</td>
             <td class="number">15万円</td>
-            <td class="number">100</td>
-            <td class="number">3</td>
-            <td class="number">0.8</td>
-            <td class="number">19万円</td>
+            <td>LINE登録</td>
+            <td class="number">80</td>
+            <td class="number">1,875円</td>
           </tr>
           <tr>
             <td>LinkedIn広告</td>
             <td class="number">8万円</td>
-            <td class="number">10</td>
-            <td class="number">2</td>
-            <td class="number">0.5</td>
-            <td class="number">16万円</td>
+            <td>資料請求・ウェビナー</td>
+            <td class="number">20</td>
+            <td class="number">4,000円</td>
           </tr>
-          <tr style="background: rgba(34, 197, 94, 0.1);">
-            <td><strong>ウェビナー</strong></td>
+          <tr style="background: rgba(232, 93, 42, 0.1);">
+            <td><strong>ウェビナー運営</strong></td>
             <td class="number"><strong>10万円</strong></td>
-            <td class="number"><strong>80</strong></td>
-            <td class="number"><strong>8</strong></td>
-            <td class="number highlight-cell"><strong>2</strong></td>
-            <td class="number highlight-cell"><strong>5万円</strong></td>
+            <td>商談（直接）</td>
+            <td class="number highlight-cell"><strong>9商談</strong></td>
+            <td class="number highlight-cell"><strong>11,000円</strong></td>
           </tr>
           <tr>
             <td>オーガニック</td>
             <td class="number">-</td>
-            <td class="number">15</td>
-            <td class="number">2</td>
-            <td class="number">0.5</td>
+            <td>全チャネル</td>
+            <td class="number">30</td>
             <td class="number">-</td>
           </tr>
         </tbody>
       </table>
 
       <div class="alert-box">
-        <h4>ポイント：ウェビナーが最もCPA効率が良い</h4>
-        <p>ウェビナーはCPA 5万円/件と、他チャネルの1/3以下のコストで成約を獲得できます。月2回の開催を確実に実施し、参加者の質を高めることが重要です。</p>
+        <h4>重要：フォーム設置の優先順位</h4>
+        <div class="grid" style="margin-top: 12px; gap: 12px;">
+          <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #e85d2a;">
+            <strong style="color: #e85d2a;">1. ウェビナーLP・申込フォーム</strong>
+            <p style="margin: 4px 0 0; font-size: 0.85rem;">商談の47%を生み出す最重要チャネル</p>
+          </div>
+          <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+            <strong style="color: #8b5cf6;">2. 資料請求フォーム</strong>
+            <p style="margin: 4px 0 0; font-size: 0.85rem;">検討段階の顧客を獲得、商談化率10%</p>
+          </div>
+          <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #22c55e;">
+            <strong style="color: #22c55e;">3. LINE登録</strong>
+            <p style="margin: 4px 0 0; font-size: 0.85rem;">ナーチャリング用、長期育成向き</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1093,23 +1174,31 @@
       }
     });
 
-    // Channel Performance Chart
-    const channelCtx = document.getElementById('channelChart').getContext('2d');
-    new Chart(channelCtx, {
+    // Lead Channel Performance Chart
+    const leadChannelCtx = document.getElementById('leadChannelChart').getContext('2d');
+    new Chart(leadChannelCtx, {
       type: 'bar',
       data: {
-        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn', 'ウェビナー'],
+        labels: ['ウェビナー申込', '資料請求', 'LINE登録'],
         datasets: [
           {
-            label: '商談数',
-            data: [6, 3, 3, 2, 8],
-            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            label: 'リード数',
+            data: [80, 60, 80],
+            backgroundColor: [
+              'rgba(232, 93, 42, 0.7)',
+              'rgba(139, 92, 246, 0.7)',
+              'rgba(34, 197, 94, 0.7)'
+            ],
             borderRadius: 4
           },
           {
-            label: '成約数',
-            data: [1.5, 0.8, 0.8, 0.5, 2],
-            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+            label: '商談数',
+            data: [9, 6, 4],
+            backgroundColor: [
+              'rgba(232, 93, 42, 0.4)',
+              'rgba(139, 92, 246, 0.4)',
+              'rgba(34, 197, 94, 0.4)'
+            ],
             borderRadius: 4
           }
         ]
@@ -1122,6 +1211,34 @@
         },
         plugins: {
           legend: { position: 'top' }
+        }
+      }
+    });
+
+    // Ad Channel Performance Chart
+    const channelCtx = document.getElementById('channelChart').getContext('2d');
+    new Chart(channelCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn', 'ウェビナー運営'],
+        datasets: [
+          {
+            label: 'リード数',
+            data: [50, 40, 80, 20, 9],
+            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+          x: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { display: false }
         }
       }
     });
