@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ホリエモンAI学校 介護校 - KPI・予算計画</title>
+  <meta name="description" content="ホリエモンAI学校 介護校のKPI設定、予算計画、モニタリング体制を視覚的に整理したページ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --ink: #1e1b16;
+      --muted: #615a50;
+      --paper: #f7f1e6;
+      --cream: #f2e8d8;
+      --accent: #e85d2a;
+      --accent-dark: #b9431d;
+      --teal: #2b6f6c;
+      --mint: #e1f0e7;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --purple: #8b5cf6;
+      --shadow: 0 16px 40px rgba(30, 27, 22, 0.18);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #fff7ea 0%, #f9efe3 35%, #f4e6d2 70%, #f0dfc6 100%);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: relative;
+      padding: 60px 8vw 40px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(232, 93, 42, 0.12), rgba(43, 111, 108, 0.2));
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(43, 111, 108, 0.15);
+      top: -220px;
+      right: -140px;
+      z-index: -1;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .hero {
+      margin-top: 32px;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 0 0 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+      max-width: 700px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    main {
+      padding: 0 8vw 80px;
+      display: grid;
+      gap: 48px;
+    }
+
+    section {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 22px 46px rgba(30, 27, 22, 0.1);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    section h2 {
+      font-family: "Fraunces", serif;
+      margin-top: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+    .card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .card h3 { margin-top: 0; font-size: 1.1rem; }
+    .card p { margin-bottom: 0; }
+
+    /* Summary Cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .summary-card {
+      background: linear-gradient(135deg, var(--paper) 0%, white 100%);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+      box-shadow: 0 4px 12px rgba(30, 27, 22, 0.06);
+    }
+
+    .summary-card .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .summary-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin: 8px 0 4px;
+    }
+
+    .summary-card .sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .summary-card.highlight {
+      background: linear-gradient(135deg, var(--teal) 0%, #1f5654 100%);
+      color: white;
+    }
+
+    .summary-card.highlight .label { color: rgba(255,255,255,0.8); }
+    .summary-card.highlight .value { color: white; }
+    .summary-card.highlight .sub { color: rgba(255,255,255,0.7); }
+
+    /* Funnel */
+    .funnel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 24px 0;
+    }
+
+    .funnel-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .funnel-stage:hover { transform: scale(1.02); }
+
+    .funnel-stage .stage-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .funnel-stage .stage-name { font-size: 0.9rem; opacity: 0.9; }
+    .funnel-stage .stage-value { font-size: 1.4rem; font-weight: 700; }
+    .funnel-stage .stage-cvr { font-size: 0.8rem; opacity: 0.8; }
+
+    .funnel-arrow {
+      font-size: 1.5rem;
+      color: var(--muted);
+      margin: -8px 0;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      max-width: 100%;
+    }
+
+    .chart-container-small {
+      position: relative;
+      height: 250px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin-top: 16px;
+    }
+
+    .data-table th, .data-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.1);
+    }
+
+    .data-table th {
+      background: var(--cream);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .data-table tr:hover { background: rgba(232, 93, 42, 0.05); }
+
+    .data-table .number { text-align: right; font-weight: 600; }
+    .data-table .highlight-cell { color: var(--accent-dark); font-weight: 700; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--teal));
+      border-radius: 3px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -26px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item .period {
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 1rem;
+    }
+
+    .timeline-item .content {
+      margin-top: 4px;
+      color: var(--muted);
+    }
+
+    /* Monitoring Schedule */
+    .monitoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .monitoring-card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .monitoring-card.daily { border-left-color: var(--green); }
+    .monitoring-card.weekly { border-left-color: var(--blue); }
+    .monitoring-card.monthly { border-left-color: var(--purple); }
+    .monitoring-card.quarterly { border-left-color: var(--accent); }
+
+    .monitoring-card h4 {
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .monitoring-card h4 .badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: white;
+    }
+
+    .monitoring-card.daily h4 .badge { background: var(--green); }
+    .monitoring-card.weekly h4 .badge { background: var(--blue); }
+    .monitoring-card.monthly h4 .badge { background: var(--purple); }
+    .monitoring-card.quarterly h4 .badge { background: var(--accent); }
+
+    .monitoring-card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .monitoring-card li { margin-bottom: 6px; }
+
+    /* Alert Box */
+    .alert-box {
+      background: linear-gradient(135deg, rgba(232, 93, 42, 0.1) 0%, rgba(232, 93, 42, 0.05) 100%);
+      border: 1px solid rgba(232, 93, 42, 0.3);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 24px;
+    }
+
+    .alert-box h4 {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+    }
+
+    /* Condition Cards */
+    .condition-card {
+      background: var(--paper);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .condition-card .number {
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 28px;
+      height: 28px;
+      background: var(--teal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .condition-card h4 { margin: 0 0 8px; }
+    .condition-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* Progress Bar */
+    .progress-container {
+      margin: 16px 0;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .progress-bar {
+      height: 12px;
+      background: var(--cream);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.5s ease;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 8vw 60px;
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 40px 6vw 24px; }
+      main { padding: 0 6vw 60px; }
+      section { padding: 24px; }
+      .summary-card .value { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="index.html">Overview</a>
+      <a href="kpi-evaluation.html">KPI評価</a>
+      <a href="#summary">サマリー</a>
+      <a href="#budget">予算</a>
+      <a href="#funnel">ファネル</a>
+      <a href="#channels">チャネル</a>
+      <a href="#monitoring">モニタリング</a>
+      <a href="#conditions">7500万円条件</a>
+    </div>
+    <div class="hero">
+      <p class="pill">KPI & Budget Plan</p>
+      <h1>KPI・予算計画書</h1>
+      <p>Year 1の売上目標3,500万円を達成するための予算配分、KPI設定、モニタリング体制を視覚的にまとめました。</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Executive Summary -->
+    <section id="summary">
+      <p class="pill">Executive Summary</p>
+      <h2>結論：投資と期待リターン</h2>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="label">年間マーケ予算</div>
+          <div class="value">900万円</div>
+          <div class="sub">月75万円</div>
+        </div>
+        <div class="summary-card highlight">
+          <div class="label">目標FC売上</div>
+          <div class="value">3,500万円</div>
+          <div class="sub">Year 1</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">粗利</div>
+          <div class="value">2,600万円</div>
+          <div class="sub">売上-マーケ費</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">ROAS</div>
+          <div class="value">389%</div>
+          <div class="sub">広告費用対効果</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">CPA</div>
+          <div class="value">16万円</div>
+          <div class="sub">1契約あたり</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">年間契約目標</div>
+          <div class="value">56件</div>
+          <div class="sub">月4.7件</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>投資判断の根拠</h3>
+        <p><strong>900万円の投資で3,500万円の売上（2,600万円の粗利）</strong>を見込みます。CPA 16万円は1契約あたりFC売上62万円の26%であり、B2B標準（20-30%）の範囲内です。LTV/CACは約4倍と健全な水準です。</p>
+      </div>
+    </section>
+
+    <!-- Budget Allocation -->
+    <section id="budget">
+      <p class="pill">Budget Allocation</p>
+      <h2>予算配分</h2>
+
+      <div class="grid-2">
+        <div>
+          <h3>チャネル別月間予算（75万円/月）</h3>
+          <div class="chart-container-small">
+            <canvas id="budgetChart"></canvas>
+          </div>
+        </div>
+        <div>
+          <h3>予算配分の根拠</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>チャネル</th>
+                <th class="number">予算</th>
+                <th>選定理由</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google広告</td>
+                <td class="number">20万円</td>
+                <td>顕在層の確実な獲得</td>
+              </tr>
+              <tr>
+                <td>LINE広告</td>
+                <td class="number">15万円</td>
+                <td>介護業界のLINE利用率高</td>
+              </tr>
+              <tr>
+                <td>Meta広告</td>
+                <td class="number">12万円</td>
+                <td>認知拡大・リタゲ</td>
+              </tr>
+              <tr>
+                <td>ウェビナー</td>
+                <td class="number highlight-cell">10万円</td>
+                <td>CPA最安（5万円/件）</td>
+              </tr>
+              <tr>
+                <td>LinkedIn</td>
+                <td class="number">8万円</td>
+                <td>決裁者への直接リーチ</td>
+              </tr>
+              <tr>
+                <td>その他</td>
+                <td class="number">10万円</td>
+                <td>コンテンツ・ツール</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 32px;">四半期別予算推移</h3>
+      <div class="chart-container">
+        <canvas id="quarterlyBudgetChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Funnel -->
+    <section id="funnel">
+      <p class="pill">Marketing Funnel</p>
+      <h2>ファネル転換率</h2>
+
+      <div class="grid-2">
+        <div>
+          <h3>月間ファネル（目標値）</h3>
+          <div class="funnel-container">
+            <div class="funnel-stage" style="width: 100%; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 8px 8px 0 0;">
+              <div class="stage-content">
+                <span class="stage-name">サイト訪問</span>
+                <span class="stage-value">2,000</span>
+                <span class="stage-cvr">CVR 100%</span>
+              </div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-stage" style="width: 85%; background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+              <div class="stage-content">
+                <span class="stage-name">LINE登録</span>
+                <span class="stage-value">80</span>
+                <span class="stage-cvr">CVR 4.0%</span>
+              </div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-stage" style="width: 70%; background: linear-gradient(135deg, #ec4899, #db2777);">
+              <div class="stage-content">
+                <span class="stage-name">ウェビナー参加</span>
+                <span class="stage-value">44</span>
+                <span class="stage-cvr">CVR 2.2%</span>
+              </div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-stage" style="width: 55%; background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <div class="stage-content">
+                <span class="stage-name">商談実施</span>
+                <span class="stage-value">14</span>
+                <span class="stage-cvr">CVR 0.7%</span>
+              </div>
+            </div>
+            <div class="funnel-arrow">▼</div>
+            <div class="funnel-stage" style="width: 40%; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 0 0 8px 8px;">
+              <div class="stage-content">
+                <span class="stage-name">成約</span>
+                <span class="stage-value">4.7件</span>
+                <span class="stage-cvr">CVR 0.24%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>各段階の転換率</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>転換ポイント</th>
+                <th class="number">目標</th>
+                <th class="number">下限</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>訪問 → LINE登録</td>
+                <td class="number">4%</td>
+                <td class="number">2.5%</td>
+              </tr>
+              <tr>
+                <td>LINE → ウェビナー申込</td>
+                <td class="number">25%</td>
+                <td class="number">20%</td>
+              </tr>
+              <tr>
+                <td>申込 → 参加</td>
+                <td class="number">55%</td>
+                <td class="number">45%</td>
+              </tr>
+              <tr>
+                <td>参加 → 商談希望</td>
+                <td class="number">20%</td>
+                <td class="number">15%</td>
+              </tr>
+              <tr>
+                <td>商談設定 → 実施</td>
+                <td class="number">80%</td>
+                <td class="number">70%</td>
+              </tr>
+              <tr>
+                <td>商談 → 成約</td>
+                <td class="number highlight-cell">30%</td>
+                <td class="number">20%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="card" style="margin-top: 20px;">
+            <h4 style="margin-top: 0;">全体CVR</h4>
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>訪問 → 成約</span>
+                <span><strong>0.24%</strong>（許容下限: 0.15%）</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, var(--teal), var(--green));"></div>
+              </div>
+            </div>
+            <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">B2B法人向けの標準は0.1〜0.5%。0.24%は健全な水準。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channel KPIs -->
+    <section id="channels">
+      <p class="pill">Channel Performance</p>
+      <h2>チャネル別KPI</h2>
+
+      <div class="chart-container">
+        <canvas id="channelChart"></canvas>
+      </div>
+
+      <table class="data-table" style="margin-top: 24px;">
+        <thead>
+          <tr>
+            <th>チャネル</th>
+            <th class="number">月間費用</th>
+            <th class="number">リード</th>
+            <th class="number">商談</th>
+            <th class="number">成約</th>
+            <th class="number">CPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google広告</td>
+            <td class="number">20万円</td>
+            <td class="number">25</td>
+            <td class="number">6</td>
+            <td class="number">1.5</td>
+            <td class="number">13万円</td>
+          </tr>
+          <tr>
+            <td>Meta広告</td>
+            <td class="number">12万円</td>
+            <td class="number">20</td>
+            <td class="number">3</td>
+            <td class="number">0.8</td>
+            <td class="number">15万円</td>
+          </tr>
+          <tr>
+            <td>LINE広告</td>
+            <td class="number">15万円</td>
+            <td class="number">100</td>
+            <td class="number">3</td>
+            <td class="number">0.8</td>
+            <td class="number">19万円</td>
+          </tr>
+          <tr>
+            <td>LinkedIn広告</td>
+            <td class="number">8万円</td>
+            <td class="number">10</td>
+            <td class="number">2</td>
+            <td class="number">0.5</td>
+            <td class="number">16万円</td>
+          </tr>
+          <tr style="background: rgba(34, 197, 94, 0.1);">
+            <td><strong>ウェビナー</strong></td>
+            <td class="number"><strong>10万円</strong></td>
+            <td class="number"><strong>80</strong></td>
+            <td class="number"><strong>8</strong></td>
+            <td class="number highlight-cell"><strong>2</strong></td>
+            <td class="number highlight-cell"><strong>5万円</strong></td>
+          </tr>
+          <tr>
+            <td>オーガニック</td>
+            <td class="number">-</td>
+            <td class="number">15</td>
+            <td class="number">2</td>
+            <td class="number">0.5</td>
+            <td class="number">-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box">
+        <h4>ポイント：ウェビナーが最もCPA効率が良い</h4>
+        <p>ウェビナーはCPA 5万円/件と、他チャネルの1/3以下のコストで成約を獲得できます。月2回の開催を確実に実施し、参加者の質を高めることが重要です。</p>
+      </div>
+    </section>
+
+    <!-- Sales Target Timeline -->
+    <section id="timeline">
+      <p class="pill">Sales Target</p>
+      <h2>売上目標タイムライン</h2>
+
+      <div class="grid-2">
+        <div>
+          <h3>Year 1 四半期別目標</h3>
+          <div class="chart-container">
+            <canvas id="salesChart"></canvas>
+          </div>
+        </div>
+        <div>
+          <h3>マイルストーン</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="period">Q1（1-3月）</div>
+              <div class="content">8件契約・496万円<br>立ち上げ期：広告テスト、ウェビナー開始</div>
+            </div>
+            <div class="timeline-item">
+              <div class="period">Q2（4-6月）</div>
+              <div class="content">12件契約・744万円<br>最適化期：勝ちパターンの確立</div>
+            </div>
+            <div class="timeline-item">
+              <div class="period">Q3（7-9月）</div>
+              <div class="content">16件契約・992万円<br>拡大期：予算増額の検討</div>
+            </div>
+            <div class="timeline-item">
+              <div class="period">Q4（10-12月）</div>
+              <div class="content">20件契約・1,240万円<br>年度末需要：助成金訴求強化</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monitoring -->
+    <section id="monitoring">
+      <p class="pill">Monitoring</p>
+      <h2>モニタリング体制</h2>
+
+      <h3>重要KPI TOP5（経営層向け）</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>優先度</th>
+            <th>KPI</th>
+            <th class="number">目標値</th>
+            <th>確認頻度</th>
+            <th>重要な理由</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">1</span></td>
+            <td><strong>成約件数</strong></td>
+            <td class="number highlight-cell">4.7件/月</td>
+            <td>月次</td>
+            <td>売上に直結する最終成果</td>
+          </tr>
+          <tr>
+            <td><span style="background: var(--teal); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">2</span></td>
+            <td><strong>商談実施数</strong></td>
+            <td class="number">14件/月</td>
+            <td>週次</td>
+            <td>成約の先行指標</td>
+          </tr>
+          <tr>
+            <td><span style="background: var(--blue); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">3</span></td>
+            <td><strong>CPA</strong></td>
+            <td class="number">16万円以下</td>
+            <td>月次</td>
+            <td>投資効率の判断基準</td>
+          </tr>
+          <tr>
+            <td><span style="background: var(--purple); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">4</span></td>
+            <td><strong>全体CVR</strong></td>
+            <td class="number">0.24%</td>
+            <td>月次</td>
+            <td>ファネル全体の健全性</td>
+          </tr>
+          <tr>
+            <td><span style="background: var(--green); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">5</span></td>
+            <td><strong>ウェビナー参加数</strong></td>
+            <td class="number">44名/月</td>
+            <td>週次</td>
+            <td>最もCPA効率の良いチャネル</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: 32px;">確認スケジュール</h3>
+      <div class="monitoring-grid">
+        <div class="monitoring-card daily">
+          <h4><span class="badge">日次</span>デイリーチェック</h4>
+          <ul>
+            <li>広告費消化ペース</li>
+            <li>サイト訪問数（70+/日）</li>
+            <li>LINE友だち追加（4+/日）</li>
+          </ul>
+        </div>
+        <div class="monitoring-card weekly">
+          <h4><span class="badge">週次</span>ウィークリーレビュー</h4>
+          <ul>
+            <li>広告CTR（検索1%+）</li>
+            <li>ウェビナー申込進捗</li>
+            <li>商談設定数（4+/週）</li>
+            <li>CPC/CPF推移</li>
+          </ul>
+        </div>
+        <div class="monitoring-card monthly">
+          <h4><span class="badge">月次</span>マンスリーレポート</h4>
+          <ul>
+            <li>総広告費（75万円以内）</li>
+            <li>商談実施数（14+）</li>
+            <li>成約件数（4+）</li>
+            <li>CPA（16万円以下）</li>
+            <li>FC売上（290万円+）</li>
+          </ul>
+        </div>
+        <div class="monitoring-card quarterly">
+          <h4><span class="badge">四半期</span>戦略レビュー</h4>
+          <ul>
+            <li>チャネル別ROAS</li>
+            <li>ウェビナーROI</li>
+            <li>LTV/CAC（3以上）</li>
+            <li>予算配分の見直し</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <h4>アラート基準（対策が必要な数値）</h4>
+        <div class="grid-3" style="margin-top: 12px;">
+          <div><strong>成約 &lt; 3件/月</strong><br><small>→ 営業プロセス見直し</small></div>
+          <div><strong>商談 &lt; 10件/月</strong><br><small>→ リード獲得強化</small></div>
+          <div><strong>CPA &gt; 20万円</strong><br><small>→ チャネル予算見直し</small></div>
+          <div><strong>全体CVR &lt; 0.15%</strong><br><small>→ ボトルネック特定</small></div>
+          <div><strong>ウェビナー &lt; 30名</strong><br><small>→ 集客広告増額</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conditions for 75M -->
+    <section id="conditions">
+      <p class="pill">Growth Scenario</p>
+      <h2>Year 1で7,500万円を狙う条件</h2>
+
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card">
+          <h3>現実的プラン</h3>
+          <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="summary-card">
+              <div class="label">売上</div>
+              <div class="value" style="font-size: 1.5rem;">3,500万円</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">予算</div>
+              <div class="value" style="font-size: 1.5rem;">900万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background: linear-gradient(135deg, rgba(43, 111, 108, 0.1), rgba(43, 111, 108, 0.05));">
+          <h3>7,500万円プラン</h3>
+          <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="summary-card highlight">
+              <div class="label">売上</div>
+              <div class="value" style="font-size: 1.5rem;">7,500万円</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">予算</div>
+              <div class="value" style="font-size: 1.5rem;">1,800万円</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>達成に必要な5つの条件</h3>
+      <div class="grid" style="gap: 16px;">
+        <div class="condition-card">
+          <span class="number">1</span>
+          <h4>マーケティング予算の倍増</h4>
+          <p>月75万円 → 月150万円（年間1,800万円）</p>
+        </div>
+        <div class="condition-card">
+          <span class="number">2</span>
+          <h4>ウェビナーの月4回開催</h4>
+          <p>月2回 → 月4回に増加。申込200名/月を目指す</p>
+        </div>
+        <div class="condition-card">
+          <span class="number">3</span>
+          <h4>専任営業体制の構築</h4>
+          <p>専任営業1〜2名をアサイン（人件費 約900万円/年）</p>
+        </div>
+        <div class="condition-card">
+          <span class="number">4</span>
+          <h4>既存顧客へのクロスセル</h4>
+          <p>あおぞらケアグループの介護事業者顧客へ展開</p>
+        </div>
+        <div class="condition-card">
+          <span class="number">5</span>
+          <h4>業界ネットワークの活用</h4>
+          <p>展示会出展、協会連携、介護メディアへの露出</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 24px; background: linear-gradient(135deg, var(--mint), white);">
+        <h3>7,500万円達成時の収支</h3>
+        <table class="data-table">
+          <tbody>
+            <tr>
+              <td>FC売上</td>
+              <td class="number highlight-cell">7,500万円</td>
+            </tr>
+            <tr>
+              <td>マーケティング費用</td>
+              <td class="number">△1,800万円</td>
+            </tr>
+            <tr>
+              <td>営業人件費（1.5名）</td>
+              <td class="number">△900万円</td>
+            </tr>
+            <tr>
+              <td>その他経費</td>
+              <td class="number">△300万円</td>
+            </tr>
+            <tr style="background: rgba(34, 197, 94, 0.1);">
+              <td><strong>営業利益</strong></td>
+              <td class="number highlight-cell"><strong>4,500万円（利益率60%）</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Q1 Decision Point -->
+    <section>
+      <p class="pill">Decision Point</p>
+      <h2>Q1終了時点の判断基準</h2>
+
+      <div class="grid">
+        <div class="card" style="border-left: 4px solid var(--green);">
+          <h3 style="color: var(--green);">好調</h3>
+          <p><strong>成約10件以上、CPA 12万円以下</strong></p>
+          <p style="font-size: 0.9rem;">→ 予算増額を検討（月100万円へ）</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--blue);">
+          <h3 style="color: var(--blue);">順調</h3>
+          <p><strong>成約6-9件、CPA 16万円以下</strong></p>
+          <p style="font-size: 0.9rem;">→ 現行計画を継続</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--accent);">
+          <h3 style="color: var(--accent);">要改善</h3>
+          <p><strong>成約6件未満、CPA 20万円超</strong></p>
+          <p style="font-size: 0.9rem;">→ チャネル配分見直し、施策改善</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ホリエモンAI学校 介護校 KPI・予算計画書（2025年1月版）
+  </footer>
+
+  <script>
+    // Budget Pie Chart
+    const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+    new Chart(budgetCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Google広告', 'LINE広告', 'Meta広告', 'ウェビナー', 'LinkedIn', 'その他'],
+        datasets: [{
+          data: [20, 15, 12, 10, 8, 10],
+          backgroundColor: [
+            '#3b82f6',
+            '#22c55e',
+            '#8b5cf6',
+            '#e85d2a',
+            '#0ea5e9',
+            '#94a3b8'
+          ],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { padding: 16, font: { size: 12 } }
+          }
+        }
+      }
+    });
+
+    // Quarterly Budget Chart
+    const quarterlyCtx = document.getElementById('quarterlyBudgetChart').getContext('2d');
+    new Chart(quarterlyCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [
+          {
+            label: '予算（万円）',
+            data: [200, 220, 230, 250],
+            backgroundColor: 'rgba(43, 111, 108, 0.7)',
+            borderRadius: 8
+          },
+          {
+            label: '売上目標（万円）',
+            data: [496, 744, 992, 1240],
+            backgroundColor: 'rgba(232, 93, 42, 0.7)',
+            borderRadius: 8
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    // Channel Performance Chart
+    const channelCtx = document.getElementById('channelChart').getContext('2d');
+    new Chart(channelCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn', 'ウェビナー'],
+        datasets: [
+          {
+            label: '商談数',
+            data: [6, 3, 3, 2, 8],
+            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            borderRadius: 4
+          },
+          {
+            label: '成約数',
+            data: [1.5, 0.8, 0.8, 0.5, 2],
+            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+
+    // Sales Chart
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+      type: 'line',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [
+          {
+            label: 'FC売上（万円）',
+            data: [496, 744, 992, 1240],
+            borderColor: '#e85d2a',
+            backgroundColor: 'rgba(232, 93, 42, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 6,
+            pointBackgroundColor: '#e85d2a'
+          },
+          {
+            label: '累計売上（万円）',
+            data: [496, 1240, 2232, 3472],
+            borderColor: '#2b6f6c',
+            backgroundColor: 'rgba(43, 111, 108, 0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 6,
+            pointBackgroundColor: '#2b6f6c'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: true }
+        },
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
