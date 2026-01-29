@@ -578,61 +578,109 @@
     <!-- Funnel -->
     <section id="funnel">
       <p class="pill">Marketing Funnel</p>
-      <h2>ファネル転換率（3チャネル並行型）</h2>
+      <h2>ファネル転換率</h2>
 
       <div class="grid-2">
         <div>
           <h3>月間ファネル（目標値）</h3>
-          <!-- New Multi-Channel Funnel Visualization -->
-          <div style="background: var(--cream); border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px;">
-            <!-- Top: Site Visit -->
-            <div style="text-align: center; margin-bottom: 20px;">
-              <div style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 16px 40px; border-radius: 8px; font-weight: 600;">
-                <div style="font-size: 0.85rem; opacity: 0.9;">サイト訪問</div>
-                <div style="font-size: 1.5rem;">2,000</div>
+          <!-- Vertical Funnel Visualization -->
+          <div style="background: var(--cream); border-radius: var(--radius-md); padding: 24px 16px;">
+
+            <!-- Stage 1: Site Visit -->
+            <div style="display: flex; justify-content: center; margin-bottom: 4px;">
+              <div style="width: 100%; max-width: 400px; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 18px 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 0.8rem; opacity: 0.9;">サイト訪問</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">2,000</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 1.8rem; font-weight: 700;">100%</div>
+                </div>
               </div>
             </div>
 
-            <div style="text-align: center; color: var(--muted); margin: 12px 0;">▼ 3つのリード獲得チャネル</div>
-
-            <!-- Middle: 3 Channels -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
-              <div style="background: linear-gradient(135deg, #e85d2a, #b9431d); color: white; padding: 14px; border-radius: 8px; text-align: center;">
-                <div style="font-size: 0.75rem; opacity: 0.9;">ウェビナー申込</div>
-                <div style="font-size: 1.3rem; font-weight: 700;">80</div>
-                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 9件</div>
-              </div>
-              <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 14px; border-radius: 8px; text-align: center;">
-                <div style="font-size: 0.75rem; opacity: 0.9;">資料請求</div>
-                <div style="font-size: 1.3rem; font-weight: 700;">60</div>
-                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 6件</div>
-              </div>
-              <div style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 14px; border-radius: 8px; text-align: center;">
-                <div style="font-size: 0.75rem; opacity: 0.9;">LINE登録</div>
-                <div style="font-size: 1.3rem; font-weight: 700;">80</div>
-                <div style="font-size: 0.7rem; opacity: 0.8;">→ 商談 4件</div>
+            <!-- Arrow + Conversion Rate -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 92%; max-width: 370px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">CVR 11%</span>
               </div>
             </div>
 
-            <div style="text-align: center; background: rgba(0,0,0,0.05); padding: 8px; border-radius: 4px; margin-bottom: 16px;">
-              <span style="font-size: 0.85rem; color: var(--muted);">リード合計: <strong style="color: var(--ink);">220</strong>（CVR 11%）</span>
-            </div>
-
-            <div style="text-align: center; color: var(--muted); margin: 12px 0;">▼</div>
-
-            <!-- Bottom: Meetings & Close -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 14px; border-radius: 8px; text-align: center;">
-                <div style="font-size: 0.8rem; opacity: 0.9;">商談実施</div>
-                <div style="font-size: 1.4rem; font-weight: 700;">15件</div>
-                <div style="font-size: 0.7rem; opacity: 0.8;">CVR 0.75%</div>
-              </div>
-              <div style="background: linear-gradient(135deg, #2b6f6c, #1f5654); color: white; padding: 14px; border-radius: 8px; text-align: center;">
-                <div style="font-size: 0.8rem; opacity: 0.9;">成約</div>
-                <div style="font-size: 1.4rem; font-weight: 700;">4.5件</div>
-                <div style="font-size: 0.7rem; opacity: 0.8;">CVR 0.23%</div>
+            <!-- Stage 2: Lead Acquisition (3 channels) -->
+            <div style="display: flex; justify-content: center; margin-bottom: 4px;">
+              <div style="width: 92%; max-width: 370px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 0.75rem; opacity: 0.9;">リード獲得（3チャネル合計）</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">220</div>
+                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">ウェビナー80 / 資料請求60 / LINE80</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 1.5rem; font-weight: 700;">11%</div>
+                </div>
               </div>
             </div>
+
+            <!-- Arrow + Conversion Rate -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 84%; max-width: 340px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">リード→商談 9%</span>
+              </div>
+            </div>
+
+            <!-- Stage 3: Meeting Set -->
+            <div style="display: flex; justify-content: center; margin-bottom: 4px;">
+              <div style="width: 84%; max-width: 340px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 0.75rem; opacity: 0.9;">商談設定</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">19件</div>
+                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">ウェビナー9 / 資料6 / LINE4</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 1.5rem; font-weight: 700;">0.95%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow + Conversion Rate -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 76%; max-width: 310px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">実施率 80%</span>
+              </div>
+            </div>
+
+            <!-- Stage 4: Meeting Done -->
+            <div style="display: flex; justify-content: center; margin-bottom: 4px;">
+              <div style="width: 76%; max-width: 310px; background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 0.75rem; opacity: 0.9;">商談実施</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">15件</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 1.5rem; font-weight: 700;">0.75%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow + Conversion Rate -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 68%; max-width: 280px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">成約率 30%</span>
+              </div>
+            </div>
+
+            <!-- Stage 5: Close -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 68%; max-width: 280px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 18px 16px; border-radius: 0 0 8px 8px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 0.8rem; opacity: 0.9;">成約</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">4.5件</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 1.8rem; font-weight: 700;">0.23%</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
         <div>
@@ -642,9 +690,10 @@
           <div class="card" style="margin-bottom: 12px; border-left: 4px solid #e85d2a;">
             <h4 style="margin: 0 0 8px; color: #e85d2a;">① ウェビナー経由（専用LP・申込フォーム）</h4>
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
-              <tr><td>LP → 申込フォーム送信</td><td class="number">10%</td></tr>
+              <tr><td>LP訪問 → 申込フォーム送信</td><td class="number">10%</td></tr>
               <tr><td>申込 → 参加</td><td class="number">55%</td></tr>
               <tr><td>参加 → 商談希望</td><td class="number">20%</td></tr>
+              <tr style="background: rgba(232, 93, 42, 0.1);"><td><strong>LP訪問 → 商談</strong></td><td class="number highlight-cell"><strong>1.1%</strong></td></tr>
             </table>
           </div>
 
@@ -654,6 +703,7 @@
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
               <tr><td>訪問 → 資料請求フォーム送信</td><td class="number">3%</td></tr>
               <tr><td>資料請求 → 商談希望</td><td class="number">10%</td></tr>
+              <tr style="background: rgba(139, 92, 246, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.3%</strong></td></tr>
             </table>
           </div>
 
@@ -663,21 +713,18 @@
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
               <tr><td>訪問 → LINE登録</td><td class="number">4%</td></tr>
               <tr><td>LINE登録 → 商談希望</td><td class="number">5%</td></tr>
+              <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.2%</strong></td></tr>
             </table>
           </div>
 
-          <div class="card" style="background: linear-gradient(135deg, var(--mint), white);">
-            <h4 style="margin-top: 0;">全体CVR</h4>
-            <div class="progress-container">
-              <div class="progress-label">
-                <span>訪問 → 成約</span>
-                <span><strong>0.23%</strong>（許容下限: 0.15%）</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 58%; background: linear-gradient(90deg, var(--teal), var(--green));"></div>
-              </div>
-            </div>
-            <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--muted);">B2B法人向けの標準は0.1〜0.5%。0.23%は健全な水準。</p>
+          <!-- Common (Post-Meeting) -->
+          <div class="card" style="background: var(--paper);">
+            <h4 style="margin: 0 0 8px;">④ 共通（商談以降）</h4>
+            <table class="data-table" style="margin: 0; font-size: 0.85rem;">
+              <tr><td>商談設定 → 実施</td><td class="number">80%</td></tr>
+              <tr><td>商談実施 → 成約</td><td class="number">30%</td></tr>
+              <tr style="background: rgba(43, 111, 108, 0.1);"><td><strong>商談設定 → 成約</strong></td><td class="number highlight-cell"><strong>24%</strong></td></tr>
+            </table>
           </div>
         </div>
       </div>
