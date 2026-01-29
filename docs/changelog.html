@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>変更履歴 - ホリエモンAI学校 介護校 マーケティング計画</title>
+  <meta name="description" content="マーケティング計画の変更履歴と更新内容" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1e1b16;
+      --muted: #615a50;
+      --paper: #f7f1e6;
+      --cream: #f2e8d8;
+      --accent: #e85d2a;
+      --accent-dark: #b9431d;
+      --teal: #2b6f6c;
+      --mint: #e1f0e7;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --red: #ef4444;
+      --shadow: 0 16px 40px rgba(30, 27, 22, 0.18);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #fff7ea 0%, #f9efe3 35%, #f4e6d2 70%, #f0dfc6 100%);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: relative;
+      padding: 60px 8vw 40px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.1), rgba(43, 111, 108, 0.15));
+      z-index: -2;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 32px 0 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+      max-width: 700px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    main {
+      padding: 0 8vw 80px;
+      display: grid;
+      gap: 32px;
+    }
+
+    .changelog-entry {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .changelog-entry h2 {
+      font-family: "Fraunces", serif;
+      margin-top: 0;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .date-badge {
+      background: var(--cream);
+      color: var(--muted);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+
+    .change-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .change-type.modify {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--blue);
+    }
+
+    .change-type.add {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--green);
+    }
+
+    .change-type.remove {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--red);
+    }
+
+    .summary-box {
+      background: linear-gradient(135deg, var(--paper) 0%, var(--cream) 100%);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .summary-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: var(--accent-dark);
+    }
+
+    .summary-box p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .change-card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .change-card h4 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .data-table th, .data-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.1);
+    }
+
+    .data-table th {
+      background: rgba(30, 27, 22, 0.05);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .data-table .number { text-align: right; }
+
+    .before { color: var(--muted); text-decoration: line-through; }
+    .after { color: var(--accent-dark); font-weight: 600; }
+    .increase { color: var(--green); }
+    .decrease { color: var(--red); }
+
+    .arrow {
+      display: inline-block;
+      margin: 0 8px;
+      color: var(--muted);
+    }
+
+    .comparison-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(30, 27, 22, 0.1);
+    }
+
+    .comparison-row:last-child { border-bottom: none; }
+
+    .comparison-label {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .comparison-values {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .value-box {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .value-box.old {
+      background: rgba(30, 27, 22, 0.08);
+      color: var(--muted);
+    }
+
+    .value-box.new {
+      background: rgba(232, 93, 42, 0.15);
+      color: var(--accent-dark);
+    }
+
+    .impact-section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 2px dashed rgba(30, 27, 22, 0.1);
+    }
+
+    .impact-section h3 {
+      margin: 0 0 16px;
+      font-size: 1.1rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .impact-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(30, 27, 22, 0.08);
+    }
+
+    .impact-card .label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .impact-card .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .impact-card .value.positive { color: var(--green); }
+    .impact-card .value.negative { color: var(--red); }
+    .impact-card .value.neutral { color: var(--teal); }
+
+    .impact-card .note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .rationale-box {
+      background: linear-gradient(135deg, rgba(43, 111, 108, 0.1) 0%, rgba(43, 111, 108, 0.05) 100%);
+      border: 1px solid rgba(43, 111, 108, 0.2);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 24px;
+    }
+
+    .rationale-box h4 {
+      margin: 0 0 12px;
+      color: var(--teal);
+    }
+
+    .rationale-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .rationale-box li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 8vw 60px;
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 40px 6vw 24px; }
+      main { padding: 0 6vw 60px; }
+      .changelog-entry { padding: 24px; }
+      .comparison-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="index.html">Overview</a>
+      <a href="kpi-budget-plan.html">現実的プラン</a>
+      <a href="aggressive-plan.html">攻めの計画</a>
+      <a href="kpi-evaluation.html">KPI評価</a>
+    </div>
+    <div class="hero">
+      <span class="pill">Changelog</span>
+      <h1>変更履歴</h1>
+      <p>マーケティング計画の更新内容と変更理由を記録しています。</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Latest Change -->
+    <div class="changelog-entry">
+      <h2>
+        <span class="date-badge">2025/01/29</span>
+        積極的プラン：ウェビナー回数の調整
+      </h2>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span class="change-type modify">変更</span>
+        <span class="change-type add">補填策追加</span>
+      </div>
+
+      <div class="summary-box">
+        <h3>変更の要旨</h3>
+        <p>積極的プラン（7,500万円目標）のウェビナー開催回数を<strong>月4回から月2回に変更</strong>しました。現実的プランと同じ開催頻度に統一し、削減した予算を広告強化に振り分けることで、全体のリード数と成約目標を維持します。</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="change-card">
+          <h4>ウェビナー関連の変更</h4>
+          <div class="comparison-row">
+            <span class="comparison-label">開催回数</span>
+            <div class="comparison-values">
+              <span class="value-box old">月4回</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">月2回</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">運営費</span>
+            <div class="comparison-values">
+              <span class="value-box old">25万円</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">15万円</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">ウェビナーリード</span>
+            <div class="comparison-values">
+              <span class="value-box old">168名</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">84名</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">ウェビナー商談</span>
+            <div class="comparison-values">
+              <span class="value-box old">18件</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">9件</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="change-card">
+          <h4>補填策：広告強化</h4>
+          <div class="comparison-row">
+            <span class="comparison-label">Google広告</span>
+            <div class="comparison-values">
+              <span class="value-box old">40万円</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">45万円</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">Meta広告</span>
+            <div class="comparison-values">
+              <span class="value-box old">25万円</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">30万円</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">LINE広告</span>
+            <div class="comparison-values">
+              <span class="value-box old">30万円</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">35万円</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comparison-label">コンテンツ制作</span>
+            <div class="comparison-values">
+              <span class="value-box old">10万円</span>
+              <span class="arrow">→</span>
+              <span class="value-box new">5万円</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="impact-section">
+        <h3>リード獲得目標の調整</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>チャネル</th>
+              <th class="number">変更前リード</th>
+              <th class="number">変更後リード</th>
+              <th class="number">差分</th>
+              <th class="number">変更後商談</th>
+              <th class="number">商談貢献率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ウェビナー申込</td>
+              <td class="number before">168</td>
+              <td class="number after">84</td>
+              <td class="number decrease">-84</td>
+              <td class="number">9件</td>
+              <td class="number">23%</td>
+            </tr>
+            <tr style="background: rgba(34, 197, 94, 0.1);">
+              <td><strong>資料請求</strong></td>
+              <td class="number">126</td>
+              <td class="number after"><strong>189</strong></td>
+              <td class="number increase"><strong>+63</strong></td>
+              <td class="number"><strong>19件</strong></td>
+              <td class="number"><strong>49%</strong></td>
+            </tr>
+            <tr>
+              <td>LINE登録</td>
+              <td class="number">168</td>
+              <td class="number after">189</td>
+              <td class="number increase">+21</td>
+              <td class="number">11件</td>
+              <td class="number">28%</td>
+            </tr>
+            <tr style="background: var(--cream); font-weight: 600;">
+              <td>合計</td>
+              <td class="number">462</td>
+              <td class="number">462</td>
+              <td class="number">±0</td>
+              <td class="number">39件</td>
+              <td class="number">100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="impact-section">
+        <h3>影響度サマリー</h3>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="label">総リード数</div>
+            <div class="value neutral">462</div>
+            <div class="note">変更なし</div>
+          </div>
+          <div class="impact-card">
+            <div class="label">月間商談</div>
+            <div class="value neutral">39件</div>
+            <div class="note">変更なし</div>
+          </div>
+          <div class="impact-card">
+            <div class="label">月間成約</div>
+            <div class="value neutral">10件</div>
+            <div class="note">変更なし</div>
+          </div>
+          <div class="impact-card">
+            <div class="label">予算総額</div>
+            <div class="value neutral">150万円</div>
+            <div class="note">変更なし</div>
+          </div>
+          <div class="impact-card">
+            <div class="label">主要チャネル</div>
+            <div class="value positive">資料請求</div>
+            <div class="note">49%に上昇</div>
+          </div>
+          <div class="impact-card">
+            <div class="label">ウェビナー貢献</div>
+            <div class="value negative">23%</div>
+            <div class="note">46%から低下</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rationale-box">
+        <h4>変更理由</h4>
+        <ul>
+          <li><strong>運営負荷の軽減</strong>：月4回のウェビナー開催は運営リソースの観点で現実的ではないと判断</li>
+          <li><strong>プラン間の統一</strong>：現実的プラン・積極的プランともにウェビナーは月2回で統一し、計画の一貫性を確保</li>
+          <li><strong>広告による補填</strong>：ウェビナー削減分のリードは、資料請求・LINE広告の強化で確保可能</li>
+          <li><strong>チャネル分散</strong>：ウェビナー依存度を下げることで、単一チャネルへのリスク集中を回避</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Previous entries can be added here -->
+    <div class="changelog-entry" style="opacity: 0.8;">
+      <h2>
+        <span class="date-badge">2025/01/28</span>
+        積極的プラン初版作成
+      </h2>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span class="change-type add">新規</span>
+      </div>
+
+      <div class="summary-box">
+        <h3>概要</h3>
+        <p>Year 1からFC売上7,500万円を目指す積極的プランを新規作成しました。現実的プラン（3,500万円）の約2倍の売上を狙う攻めの計画です。</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="change-card">
+          <h4>積極的プランの特徴</h4>
+          <ul style="margin: 0; padding-left: 20px;">
+            <li>年間マーケティング予算: 1,800万円</li>
+            <li>専任営業体制: 1.5名</li>
+            <li>月間契約目標: 10件</li>
+            <li>ROAS: 417%</li>
+          </ul>
+        </div>
+        <div class="change-card">
+          <h4>対象ドキュメント</h4>
+          <ul style="margin: 0; padding-left: 20px;">
+            <li><a href="aggressive-plan.html">積極的プラン（HTML）</a></li>
+            <li>08_aggressive-plan-7500.md</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="changelog-entry" style="opacity: 0.7;">
+      <h2>
+        <span class="date-badge">2025/01/27</span>
+        ファネル構造の見直し
+      </h2>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span class="change-type modify">変更</span>
+      </div>
+
+      <div class="summary-box">
+        <h3>概要</h3>
+        <p>リード獲得チャネルを「サイト→LINE→ウェビナー」の直列構造から、「ウェビナー申込」「資料請求」「LINE登録」の3チャネル並列構造に変更しました。</p>
+      </div>
+    </div>
+
+    <div class="changelog-entry" style="opacity: 0.6;">
+      <h2>
+        <span class="date-badge">2025/01/26</span>
+        KPI・予算計画 初版作成
+      </h2>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span class="change-type add">新規</span>
+      </div>
+
+      <div class="summary-box">
+        <h3>概要</h3>
+        <p>ホリエモンAI学校 介護校のマーケティングKPI・予算計画を初版作成しました。現実的プラン（Year 1: 3,500万円）を基本計画として策定。</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    ホリエモンAI学校 介護校 マーケティング計画 変更履歴
+  </footer>
+</body>
+</html>
