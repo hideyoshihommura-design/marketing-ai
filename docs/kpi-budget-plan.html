@@ -893,14 +893,6 @@
             <td class="number">20</td>
             <td class="number">4,000円</td>
           </tr>
-          <tr style="background: rgba(232, 93, 42, 0.1);">
-            <td><strong>ウェビナー運営</strong></td>
-            <td class="number"><strong>10万円</strong></td>
-            <td class="number"><strong>125円</strong></td>
-            <td>商談（直接）</td>
-            <td class="number highlight-cell"><strong>9商談</strong></td>
-            <td class="number highlight-cell"><strong>11,000円</strong></td>
-          </tr>
           <tr>
             <td>オーガニック</td>
             <td class="number">-</td>
@@ -1255,15 +1247,14 @@
     new Chart(budgetCtx, {
       type: 'doughnut',
       data: {
-        labels: ['Google広告', 'LINE広告', 'Meta広告', 'ウェビナー', 'LinkedIn', 'その他'],
+        labels: ['Google広告', 'LINE広告', 'Meta広告', 'LinkedIn', 'その他'],
         datasets: [{
-          data: [20, 15, 12, 10, 8, 10],
+          data: [20, 15, 12, 8, 20],
           backgroundColor: [
             '#3b82f6',
             '#22c55e',
             '#8b5cf6',
             '#e85d2a',
-            '#0ea5e9',
             '#94a3b8'
           ],
           borderWidth: 0
@@ -1360,11 +1351,11 @@
     new Chart(channelCtx, {
       type: 'bar',
       data: {
-        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn', 'ウェビナー運営'],
+        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn'],
         datasets: [
           {
             label: 'リード数',
-            data: [50, 40, 80, 20, 9],
+            data: [50, 40, 80, 20],
             backgroundColor: 'rgba(59, 130, 246, 0.7)',
             borderRadius: 4
           }
