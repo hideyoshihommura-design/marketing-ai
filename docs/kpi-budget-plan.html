@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ホリエモンAI学校 介護校 - KPI・予算計画</title>
-  <meta name="description" content="ホリエモンAI学校 介護校のKPI設定、予算計画、モニタリング体制を視覚的に整理したページ。" />
+  <title>ホリエモンAI学校 介護校 - KPI・予算計画（堅実プラン）</title>
+  <meta name="description" content="ホリエモンAI学校 介護校のKPI設定、予算計画、モニタリング体制を視覚的に整理したページ。堅実プラン（シビア想定）。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -489,12 +489,12 @@
       <a href="#funnel">ファネル</a>
       <a href="#channels">チャネル</a>
       <a href="#monitoring">モニタリング</a>
-      <a href="#conditions">7500万円条件</a>
+      <a href="#conditions">Year 2条件</a>
     </div>
     <div class="hero">
-      <p class="pill">KPI & Budget Plan</p>
+      <p class="pill">KPI & Budget Plan - 堅実プラン</p>
       <h1>KPI・予算計画書</h1>
-      <p>Year 1の売上目標3,500万円を達成するための予算配分、KPI設定、モニタリング体制を視覚的にまとめました。</p>
+      <p>Year 1は投資期間。FC売上840万円目標の堅実プラン。すべての前提を厳しく設定。</p>
     </div>
   </header>
 
@@ -507,39 +507,39 @@
       <div class="summary-grid">
         <div class="summary-card">
           <div class="label">年間マーケ予算</div>
-          <div class="value">900万円</div>
-          <div class="sub">月75万円</div>
+          <div class="value">720万円</div>
+          <div class="sub">月60万円</div>
         </div>
         <div class="summary-card highlight">
           <div class="label">目標FC売上</div>
-          <div class="value">3,500万円</div>
+          <div class="value">840万円</div>
           <div class="sub">Year 1</div>
         </div>
         <div class="summary-card">
-          <div class="label">粗利</div>
-          <div class="value">2,600万円</div>
-          <div class="sub">売上-マーケ費</div>
+          <div class="label">営業利益</div>
+          <div class="value" style="color: var(--accent);">△80万円</div>
+          <div class="sub">Year 1は投資期間</div>
         </div>
         <div class="summary-card">
           <div class="label">ROAS</div>
-          <div class="value">389%</div>
-          <div class="sub">広告費用対効果</div>
+          <div class="value">117%</div>
+          <div class="sub">対マーケ費</div>
         </div>
         <div class="summary-card">
           <div class="label">CPA</div>
-          <div class="value">16万円</div>
+          <div class="value">45万円</div>
           <div class="sub">1契約あたり</div>
         </div>
         <div class="summary-card">
           <div class="label">年間契約目標</div>
-          <div class="value">56件</div>
-          <div class="sub">月4.7件</div>
+          <div class="value">16件</div>
+          <div class="sub">月1.3件</div>
         </div>
       </div>
 
       <div class="card">
         <h3>投資判断の根拠</h3>
-        <p><strong>900万円の投資で3,500万円の売上（2,600万円の粗利）</strong>を見込みます。CPA 16万円は1契約あたりFC売上62万円の26%であり、B2B標準（20-30%）の範囲内です。LTV/CACは約4倍と健全な水準です。</p>
+        <p><strong>720万円の投資でFC売上840万円（営業利益は△80万円の赤字）</strong>。Year 1は仕組み構築と実績作りの投資期間と位置づけます。すべての前提をシビアに設定しており、CPA 45万円・全体CVR 0.05%は厳しめの想定です。Year 2以降に導入事例とCVR改善で黒字化を見込みます。</p>
       </div>
     </section>
 
@@ -550,7 +550,7 @@
 
       <div class="grid-2">
         <div>
-          <h3>チャネル別月間予算（75万円/月）</h3>
+          <h3>チャネル別月間予算（60万円/月）</h3>
           <div class="chart-container-small">
             <canvas id="budgetChart"></canvas>
           </div>
@@ -561,40 +561,53 @@
             <thead>
               <tr>
                 <th>チャネル</th>
-                <th class="number">予算</th>
+                <th class="number">月額</th>
+                <th class="number">年額</th>
                 <th>選定理由</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Google広告</td>
-                <td class="number">20万円</td>
+                <td class="number">15万円</td>
+                <td class="number">180万円</td>
                 <td>顕在層の確実な獲得</td>
               </tr>
               <tr>
-                <td>LINE広告</td>
-                <td class="number">15万円</td>
-                <td>介護業界のLINE利用率高</td>
-              </tr>
-              <tr>
                 <td>Meta広告</td>
-                <td class="number">12万円</td>
+                <td class="number">10万円</td>
+                <td class="number">120万円</td>
                 <td>認知拡大・リタゲ</td>
               </tr>
               <tr>
-                <td>ウェビナー</td>
-                <td class="number highlight-cell">10万円</td>
-                <td>CPA最安（5万円/件）</td>
+                <td>LINE広告</td>
+                <td class="number highlight-cell">12万円</td>
+                <td class="number">144万円</td>
+                <td>介護業界のLINE利用率高</td>
               </tr>
               <tr>
                 <td>LinkedIn</td>
-                <td class="number">8万円</td>
+                <td class="number">5万円</td>
+                <td class="number">60万円</td>
                 <td>決裁者への直接リーチ</td>
               </tr>
               <tr>
-                <td>その他</td>
-                <td class="number">10万円</td>
-                <td>コンテンツ・ツール</td>
+                <td>ウェビナー運営</td>
+                <td class="number">8万円</td>
+                <td class="number">96万円</td>
+                <td>信頼構築・商談化</td>
+              </tr>
+              <tr>
+                <td>コンテンツ制作</td>
+                <td class="number">5万円</td>
+                <td class="number">60万円</td>
+                <td>SEO・資料作成</td>
+              </tr>
+              <tr>
+                <td>ツール費用</td>
+                <td class="number">5万円</td>
+                <td class="number">60万円</td>
+                <td>CRM・MA・分析</td>
               </tr>
             </tbody>
           </table>
@@ -614,7 +627,7 @@
 
       <div class="grid-2">
         <div>
-          <h3>月間ファネル（目標値）</h3>
+          <h3>月間ファネル（H2目標値）</h3>
           <!-- Vertical Funnel Visualization -->
           <div style="background: var(--cream); border-radius: var(--radius-md); padding: 24px 16px;">
 
@@ -623,7 +636,7 @@
               <div style="width: 100%; max-width: 400px; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 18px 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                   <div style="font-size: 0.8rem; opacity: 0.9;">サイト訪問</div>
-                  <div style="font-size: 1.5rem; font-weight: 700;">2,000</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">1,800</div>
                 </div>
                 <div style="text-align: right;">
                   <div style="font-size: 1.8rem; font-weight: 700;">100%</div>
@@ -634,7 +647,7 @@
             <!-- Arrow + Conversion Rate -->
             <div style="display: flex; justify-content: center;">
               <div style="width: 92%; max-width: 370px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
-                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">CVR 11%</span>
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">CVR 4.3%</span>
               </div>
             </div>
 
@@ -643,11 +656,11 @@
               <div style="width: 92%; max-width: 370px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                   <div style="font-size: 0.75rem; opacity: 0.9;">リード獲得（3チャネル合計）</div>
-                  <div style="font-size: 1.3rem; font-weight: 700;">220</div>
-                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">ウェビナー80 / 資料請求60 / LINE80</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">77</div>
+                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">ウェビナー14 / 資料請求27 / LINE36</div>
                 </div>
                 <div style="text-align: right;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">11%</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">4.3%</div>
                 </div>
               </div>
             </div>
@@ -655,7 +668,7 @@
             <!-- Arrow + Conversion Rate -->
             <div style="display: flex; justify-content: center;">
               <div style="width: 84%; max-width: 340px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
-                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">リード→商談 9%</span>
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">リード→商談 3.5%</span>
               </div>
             </div>
 
@@ -664,11 +677,11 @@
               <div style="width: 84%; max-width: 340px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                   <div style="font-size: 0.75rem; opacity: 0.9;">商談設定</div>
-                  <div style="font-size: 1.3rem; font-weight: 700;">19件</div>
-                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">ウェビナー9 / 資料6 / LINE4</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">3.7件</div>
+                  <div style="font-size: 0.65rem; opacity: 0.8; margin-top: 2px;">マーケ2.7 + 紹介1.0</div>
                 </div>
                 <div style="text-align: right;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">0.95%</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">0.21%</div>
                 </div>
               </div>
             </div>
@@ -676,7 +689,7 @@
             <!-- Arrow + Conversion Rate -->
             <div style="display: flex; justify-content: center;">
               <div style="width: 76%; max-width: 310px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
-                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">実施率 80%</span>
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">実施率 65%</span>
               </div>
             </div>
 
@@ -685,10 +698,10 @@
               <div style="width: 76%; max-width: 310px; background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                   <div style="font-size: 0.75rem; opacity: 0.9;">商談実施</div>
-                  <div style="font-size: 1.3rem; font-weight: 700;">15件</div>
+                  <div style="font-size: 1.3rem; font-weight: 700;">2.4件</div>
                 </div>
                 <div style="text-align: right;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">0.75%</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">0.13%</div>
                 </div>
               </div>
             </div>
@@ -696,7 +709,7 @@
             <!-- Arrow + Conversion Rate -->
             <div style="display: flex; justify-content: center;">
               <div style="width: 68%; max-width: 280px; text-align: center; padding: 6px 0; color: var(--muted); font-size: 0.8rem;">
-                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">成約率 30%</span>
+                ▼ <span style="background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px;">成約率 18%</span>
               </div>
             </div>
 
@@ -704,11 +717,11 @@
             <div style="display: flex; justify-content: center;">
               <div style="width: 68%; max-width: 280px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 18px 16px; border-radius: 0 0 8px 8px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                  <div style="font-size: 0.8rem; opacity: 0.9;">成約</div>
-                  <div style="font-size: 1.5rem; font-weight: 700;">4.5件</div>
+                  <div style="font-size: 0.8rem; opacity: 0.9;">成約（マーケ0.3 + 紹介0.3）</div>
+                  <div style="font-size: 1.5rem; font-weight: 700;">0.6件</div>
                 </div>
                 <div style="text-align: right;">
-                  <div style="font-size: 1.8rem; font-weight: 700;">0.23%</div>
+                  <div style="font-size: 1.8rem; font-weight: 700;">0.05%</div>
                 </div>
               </div>
             </div>
@@ -722,10 +735,10 @@
           <div class="card" style="margin-bottom: 12px; border-left: 4px solid #e85d2a;">
             <h4 style="margin: 0 0 8px; color: #e85d2a;">① ウェビナー経由（専用LP・申込フォーム）</h4>
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
-              <tr><td>LP訪問 → 申込フォーム送信</td><td class="number">10%</td></tr>
-              <tr><td>申込 → 参加</td><td class="number">55%</td></tr>
-              <tr><td>参加 → 商談希望</td><td class="number">20%</td></tr>
-              <tr style="background: rgba(232, 93, 42, 0.1);"><td><strong>LP訪問 → 商談</strong></td><td class="number highlight-cell"><strong>1.1%</strong></td></tr>
+              <tr><td>LP訪問 → 申込フォーム送信</td><td class="number">4%</td></tr>
+              <tr><td>申込 → 参加</td><td class="number">40%</td></tr>
+              <tr><td>参加 → 商談希望</td><td class="number">10%</td></tr>
+              <tr style="background: rgba(232, 93, 42, 0.1);"><td><strong>LP訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.32%</strong></td></tr>
             </table>
           </div>
 
@@ -733,9 +746,9 @@
           <div class="card" style="margin-bottom: 12px; border-left: 4px solid #8b5cf6;">
             <h4 style="margin: 0 0 8px; color: #8b5cf6;">② 資料請求経由（フォーム）</h4>
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
-              <tr><td>訪問 → 資料請求フォーム送信</td><td class="number">3%</td></tr>
-              <tr><td>資料請求 → 商談希望</td><td class="number">10%</td></tr>
-              <tr style="background: rgba(139, 92, 246, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.3%</strong></td></tr>
+              <tr><td>訪問 → 資料請求フォーム送信</td><td class="number">1.5%</td></tr>
+              <tr><td>資料請求 → 商談希望</td><td class="number">5%</td></tr>
+              <tr style="background: rgba(139, 92, 246, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.08%</strong></td></tr>
             </table>
           </div>
 
@@ -743,9 +756,9 @@
           <div class="card" style="margin-bottom: 12px; border-left: 4px solid #22c55e;">
             <h4 style="margin: 0 0 8px; color: #22c55e;">③ LINE登録経由</h4>
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
-              <tr><td>訪問 → LINE登録</td><td class="number">4%</td></tr>
-              <tr><td>LINE登録 → 商談希望</td><td class="number">5%</td></tr>
-              <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.2%</strong></td></tr>
+              <tr><td>訪問 → LINE登録</td><td class="number">2%</td></tr>
+              <tr><td>LINE登録 → 商談希望</td><td class="number">2%</td></tr>
+              <tr style="background: rgba(34, 197, 94, 0.1);"><td><strong>訪問 → 商談</strong></td><td class="number highlight-cell"><strong>0.04%</strong></td></tr>
             </table>
           </div>
 
@@ -753,9 +766,9 @@
           <div class="card" style="background: var(--paper);">
             <h4 style="margin: 0 0 8px;">④ 共通（商談以降）</h4>
             <table class="data-table" style="margin: 0; font-size: 0.85rem;">
-              <tr><td>商談設定 → 実施</td><td class="number">80%</td></tr>
-              <tr><td>商談実施 → 成約</td><td class="number">30%</td></tr>
-              <tr style="background: rgba(43, 111, 108, 0.1);"><td><strong>商談設定 → 成約</strong></td><td class="number highlight-cell"><strong>24%</strong></td></tr>
+              <tr><td>商談設定 → 実施</td><td class="number">65%</td></tr>
+              <tr><td>商談実施 → 成約</td><td class="number">18%</td></tr>
+              <tr style="background: rgba(43, 111, 108, 0.1);"><td><strong>商談設定 → 成約</strong></td><td class="number highlight-cell"><strong>12%</strong></td></tr>
             </table>
           </div>
         </div>
@@ -766,24 +779,29 @@
       <div class="grid">
         <div class="card" style="text-align: center; border-top: 4px solid #e85d2a;">
           <h4 style="margin: 0 0 8px;">ウェビナー</h4>
-          <div style="font-size: 2rem; font-weight: 700; color: #e85d2a;">47%</div>
-          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">80申込 → 9商談 → 2.2成約</p>
+          <div style="font-size: 2rem; font-weight: 700; color: #e85d2a;">16%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">14申込 → 0.6商談 → 0.1成約</p>
         </div>
         <div class="card" style="text-align: center; border-top: 4px solid #8b5cf6;">
           <h4 style="margin: 0 0 8px;">資料請求</h4>
-          <div style="font-size: 2rem; font-weight: 700; color: #8b5cf6;">32%</div>
-          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">60請求 → 6商談 → 1.4成約</p>
+          <div style="font-size: 2rem; font-weight: 700; color: #8b5cf6;">38%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">27請求 → 1.4商談 → 0.3成約</p>
         </div>
         <div class="card" style="text-align: center; border-top: 4px solid #22c55e;">
           <h4 style="margin: 0 0 8px;">LINE登録</h4>
-          <div style="font-size: 2rem; font-weight: 700; color: #22c55e;">21%</div>
-          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">80登録 → 4商談 → 1.0成約</p>
+          <div style="font-size: 2rem; font-weight: 700; color: #22c55e;">19%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">36登録 → 0.7商談 → 0.1成約</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 4px solid var(--teal);">
+          <h4 style="margin: 0 0 8px;">紹介</h4>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--teal);">27%</div>
+          <p style="margin: 8px 0 0; font-size: 0.9rem; color: var(--muted);">紹介 → 1.0商談 → 0.3成約</p>
         </div>
       </div>
 
       <div class="alert-box">
-        <h4>ポイント：ウェビナーが最も商談貢献度が高い</h4>
-        <p>ウェビナーは全商談の47%を生み出す最重要チャネル。専用LPと申込フォームを整備し、月2回の開催を確実に実施することが成功の鍵です。資料請求フォームは検討段階の顧客を獲得でき、商談化率が高いのが特徴です。</p>
+        <h4>ポイント：資料請求が最も商談貢献度が高い</h4>
+        <p>シビア想定では資料請求が全商談の38%を生み出す最重要チャネル。検討段階の顧客を確実に獲得できるフォーム設計が鍵です。また紹介チャネルが27%と大きく、既存ネットワークの活用が不可欠です。</p>
       </div>
     </section>
 
@@ -801,44 +819,52 @@
         <thead>
           <tr>
             <th>リード獲得チャネル</th>
-            <th class="number">月間目標</th>
+            <th class="number">月間リード</th>
             <th class="number">商談化率</th>
             <th class="number">商談数</th>
             <th class="number">成約数</th>
-            <th class="number">商談貢献率</th>
+            <th class="number">貢献率</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="background: rgba(232, 93, 42, 0.1);">
-            <td><strong>ウェビナー申込</strong></td>
-            <td class="number"><strong>80</strong></td>
-            <td class="number"><strong>11%</strong></td>
-            <td class="number highlight-cell"><strong>9</strong></td>
-            <td class="number highlight-cell"><strong>2.2</strong></td>
-            <td class="number highlight-cell"><strong>47%</strong></td>
-          </tr>
           <tr>
-            <td>資料請求</td>
-            <td class="number">60</td>
-            <td class="number">10%</td>
-            <td class="number">6</td>
-            <td class="number">1.4</td>
-            <td class="number">32%</td>
+            <td>ウェビナー申込</td>
+            <td class="number">14</td>
+            <td class="number">4.3%</td>
+            <td class="number">0.6</td>
+            <td class="number">0.1</td>
+            <td class="number">16%</td>
+          </tr>
+          <tr style="background: rgba(139, 92, 246, 0.1);">
+            <td><strong>資料請求</strong></td>
+            <td class="number"><strong>27</strong></td>
+            <td class="number"><strong>5.2%</strong></td>
+            <td class="number highlight-cell"><strong>1.4</strong></td>
+            <td class="number highlight-cell"><strong>0.3</strong></td>
+            <td class="number highlight-cell"><strong>38%</strong></td>
           </tr>
           <tr>
             <td>LINE登録</td>
-            <td class="number">80</td>
-            <td class="number">5%</td>
-            <td class="number">4</td>
+            <td class="number">36</td>
+            <td class="number">1.9%</td>
+            <td class="number">0.7</td>
+            <td class="number">0.1</td>
+            <td class="number">19%</td>
+          </tr>
+          <tr>
+            <td>紹介</td>
+            <td class="number">-</td>
+            <td class="number">-</td>
             <td class="number">1.0</td>
-            <td class="number">21%</td>
+            <td class="number">0.3</td>
+            <td class="number">27%</td>
           </tr>
           <tr style="background: var(--cream); font-weight: 600;">
             <td>合計</td>
-            <td class="number">220</td>
-            <td class="number">9%</td>
-            <td class="number">19</td>
-            <td class="number">4.5</td>
+            <td class="number">77</td>
+            <td class="number">-</td>
+            <td class="number">3.7</td>
+            <td class="number">0.6</td>
             <td class="number">100%</td>
           </tr>
         </tbody>
@@ -854,8 +880,8 @@
           <tr>
             <th>広告チャネル</th>
             <th class="number">月間費用</th>
-            <th class="number">訪問CPA</th>
-            <th>主な獲得リード</th>
+            <th class="number">CPC</th>
+            <th class="number">訪問数</th>
             <th class="number">リード数</th>
             <th class="number">リードCPA</th>
           </tr>
@@ -863,42 +889,42 @@
         <tbody>
           <tr>
             <td>Google広告</td>
-            <td class="number">20万円</td>
-            <td class="number">300円</td>
-            <td>ウェビナー・資料請求</td>
-            <td class="number">50</td>
-            <td class="number">4,000円</td>
+            <td class="number">15万円</td>
+            <td class="number">500円</td>
+            <td class="number">300</td>
+            <td class="number">8</td>
+            <td class="number">18,750円</td>
           </tr>
           <tr>
             <td>Meta広告</td>
-            <td class="number">12万円</td>
-            <td class="number">200円</td>
-            <td>ウェビナー・LINE</td>
-            <td class="number">40</td>
-            <td class="number">3,000円</td>
+            <td class="number">10万円</td>
+            <td class="number">250円</td>
+            <td class="number">400</td>
+            <td class="number">8</td>
+            <td class="number">12,500円</td>
           </tr>
           <tr>
             <td>LINE広告</td>
-            <td class="number">15万円</td>
-            <td class="number">100円</td>
-            <td>LINE登録</td>
-            <td class="number">80</td>
-            <td class="number">1,875円</td>
+            <td class="number">12万円</td>
+            <td class="number">160円</td>
+            <td class="number">750</td>
+            <td class="number">15</td>
+            <td class="number">8,000円</td>
           </tr>
           <tr>
             <td>LinkedIn広告</td>
-            <td class="number">8万円</td>
-            <td class="number">500円</td>
-            <td>資料請求・ウェビナー</td>
-            <td class="number">20</td>
-            <td class="number">4,000円</td>
+            <td class="number">5万円</td>
+            <td class="number">700円</td>
+            <td class="number">70</td>
+            <td class="number">2</td>
+            <td class="number">25,000円</td>
           </tr>
           <tr>
             <td>オーガニック</td>
             <td class="number">-</td>
             <td class="number">-</td>
-            <td>全チャネル</td>
-            <td class="number">30</td>
+            <td class="number">100</td>
+            <td class="number">5</td>
             <td class="number">-</td>
           </tr>
         </tbody>
@@ -907,13 +933,13 @@
       <div class="alert-box">
         <h4>重要：フォーム設置の優先順位</h4>
         <div class="grid" style="margin-top: 12px; gap: 12px;">
-          <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #e85d2a;">
-            <strong style="color: #e85d2a;">1. ウェビナーLP・申込フォーム</strong>
-            <p style="margin: 4px 0 0; font-size: 0.85rem;">商談の47%を生み出す最重要チャネル</p>
-          </div>
           <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #8b5cf6;">
-            <strong style="color: #8b5cf6;">2. 資料請求フォーム</strong>
-            <p style="margin: 4px 0 0; font-size: 0.85rem;">検討段階の顧客を獲得、商談化率10%</p>
+            <strong style="color: #8b5cf6;">1. 資料請求フォーム</strong>
+            <p style="margin: 4px 0 0; font-size: 0.85rem;">商談の38%を生み出す最重要チャネル</p>
+          </div>
+          <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid var(--teal);">
+            <strong style="color: var(--teal);">2. 紹介ネットワーク</strong>
+            <p style="margin: 4px 0 0; font-size: 0.85rem;">商談の27%、成約率が高く低コスト</p>
           </div>
           <div style="background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #22c55e;">
             <strong style="color: #22c55e;">3. LINE登録</strong>
@@ -940,23 +966,78 @@
           <div class="timeline">
             <div class="timeline-item">
               <div class="period">Q1（1-3月）</div>
-              <div class="content">8件契約・496万円<br>目安CPA: 25.0万円<br>立ち上げ期：広告テスト、ウェビナー開始</div>
+              <div class="content">1件契約・FC売上47万円<br>目安CPA: 170万円<br>立ち上げ期：仕組み構築、テスト開始</div>
             </div>
             <div class="timeline-item">
               <div class="period">Q2（4-6月）</div>
-              <div class="content">12件契約・744万円<br>目安CPA: 18.3万円<br>最適化期：勝ちパターンの確立</div>
+              <div class="content">3件契約・FC売上140万円（累計187万）<br>目安CPA: 58万円<br>最適化期：勝ちパターンの模索</div>
             </div>
             <div class="timeline-item">
               <div class="period">Q3（7-9月）</div>
-              <div class="content">16件契約・992万円<br>目安CPA: 14.4万円<br>拡大期：予算増額の検討</div>
+              <div class="content">5件契約・FC売上233万円（累計419万）<br>目安CPA: 37万円<br>改善期：CVR改善・事例活用</div>
             </div>
             <div class="timeline-item">
               <div class="period">Q4（10-12月）</div>
-              <div class="content">20件契約・1,240万円<br>目安CPA: 12.5万円<br>年度末需要：助成金訴求強化</div>
+              <div class="content">7件契約・FC売上326万円（累計745万）<br>目安CPA: 27万円<br>拡大期：Year 2に向けた基盤確立</div>
             </div>
           </div>
         </div>
       </div>
+
+      <table class="data-table" style="margin-top: 24px;">
+        <thead>
+          <tr>
+            <th>四半期</th>
+            <th class="number">予算</th>
+            <th class="number">契約件数</th>
+            <th class="number">FC売上</th>
+            <th class="number">累計売上</th>
+            <th class="number">CPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1</td>
+            <td class="number">170万円</td>
+            <td class="number">1件</td>
+            <td class="number">47万円</td>
+            <td class="number">47万円</td>
+            <td class="number">170万円</td>
+          </tr>
+          <tr>
+            <td>Q2</td>
+            <td class="number">175万円</td>
+            <td class="number">3件</td>
+            <td class="number">140万円</td>
+            <td class="number">187万円</td>
+            <td class="number">58万円</td>
+          </tr>
+          <tr>
+            <td>Q3</td>
+            <td class="number">185万円</td>
+            <td class="number">5件</td>
+            <td class="number">233万円</td>
+            <td class="number">419万円</td>
+            <td class="number">37万円</td>
+          </tr>
+          <tr>
+            <td>Q4</td>
+            <td class="number">190万円</td>
+            <td class="number">7件</td>
+            <td class="number">326万円</td>
+            <td class="number">745万円</td>
+            <td class="number">27万円</td>
+          </tr>
+          <tr style="background: var(--cream); font-weight: 600;">
+            <td>Year 1合計</td>
+            <td class="number">720万円</td>
+            <td class="number">16件</td>
+            <td class="number highlight-cell">約840万円</td>
+            <td class="number">-</td>
+            <td class="number">45万円</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- Monitoring -->
@@ -979,37 +1060,37 @@
           <tr>
             <td><span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">1</span></td>
             <td><strong>成約件数</strong></td>
-            <td class="number highlight-cell">4.7件/月</td>
+            <td class="number highlight-cell">1.3件/月</td>
             <td>月次</td>
             <td>売上に直結する最終成果</td>
           </tr>
           <tr>
             <td><span style="background: var(--teal); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">2</span></td>
             <td><strong>商談実施数</strong></td>
-            <td class="number">14件/月</td>
+            <td class="number">2.4件/月→目標4件/月</td>
             <td>週次</td>
             <td>成約の先行指標</td>
           </tr>
           <tr>
             <td><span style="background: var(--blue); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">3</span></td>
             <td><strong>CPA</strong></td>
-            <td class="number">16万円以下</td>
+            <td class="number">45万円以下</td>
             <td>月次</td>
             <td>投資効率の判断基準</td>
           </tr>
           <tr>
             <td><span style="background: var(--purple); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">4</span></td>
             <td><strong>全体CVR</strong></td>
-            <td class="number">0.24%</td>
+            <td class="number">0.05%</td>
             <td>月次</td>
             <td>ファネル全体の健全性</td>
           </tr>
           <tr>
             <td><span style="background: var(--green); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 700;">5</span></td>
-            <td><strong>ウェビナー参加数</strong></td>
-            <td class="number">44名/月</td>
+            <td><strong>リード獲得数</strong></td>
+            <td class="number">77件/月</td>
             <td>週次</td>
-            <td>最もCPA効率の良いチャネル</td>
+            <td>商談パイプラインの源泉</td>
           </tr>
         </tbody>
       </table>
@@ -1020,35 +1101,36 @@
           <h4><span class="badge">日次</span>デイリーチェック</h4>
           <ul>
             <li>広告費消化ペース</li>
-            <li>サイト訪問数（70+/日）</li>
-            <li>LINE友だち追加（4+/日）</li>
+            <li>サイト訪問数（40+/日、H2: 60+）</li>
+            <li>LINE友だち追加（1+/日）</li>
           </ul>
         </div>
         <div class="monitoring-card weekly">
           <h4><span class="badge">週次</span>ウィークリーレビュー</h4>
           <ul>
-            <li>広告CTR（検索1%+）</li>
-            <li>ウェビナー申込進捗</li>
-            <li>商談設定数（4+/週）</li>
-            <li>CPC/CPF推移</li>
+            <li>広告CTR（検索0.8%+）</li>
+            <li>ウェビナー申込（7+/回）</li>
+            <li>商談設定数（1+/週）</li>
+            <li>CPC推移</li>
           </ul>
         </div>
         <div class="monitoring-card monthly">
           <h4><span class="badge">月次</span>マンスリーレポート</h4>
           <ul>
-            <li>総広告費（75万円以内）</li>
-            <li>商談実施数（14+）</li>
-            <li>成約件数（4+）</li>
-            <li>CPA（16万円以下）</li>
-            <li>FC売上（290万円+）</li>
+            <li>総広告費（60万円以内）</li>
+            <li>リード獲得（77+）</li>
+            <li>ウェビナー参加（6+）</li>
+            <li>商談実施（2+）</li>
+            <li>成約件数（1+、H2）</li>
+            <li>CPA（45万円以下）</li>
           </ul>
         </div>
         <div class="monitoring-card quarterly">
           <h4><span class="badge">四半期</span>戦略レビュー</h4>
           <ul>
             <li>チャネル別ROAS</li>
-            <li>ウェビナーROI</li>
-            <li>LTV/CAC（3以上）</li>
+            <li>LTV/CAC（1以上）</li>
+            <li>成約率（18%維持）</li>
             <li>予算配分の見直し</li>
           </ul>
         </div>
@@ -1057,161 +1139,123 @@
       <div class="alert-box">
         <h4>アラート基準（対策が必要な数値）</h4>
         <div class="grid-3" style="margin-top: 12px;">
-          <div><strong>成約 &lt; 3件/月</strong><br><small>→ 営業プロセス見直し</small></div>
-          <div><strong>商談 &lt; 10件/月</strong><br><small>→ リード獲得強化</small></div>
-          <div><strong>CPA &gt; 20万円</strong><br><small>→ チャネル予算見直し</small></div>
-          <div><strong>全体CVR &lt; 0.15%</strong><br><small>→ ボトルネック特定</small></div>
-          <div><strong>ウェビナー &lt; 30名</strong><br><small>→ 集客広告増額</small></div>
+          <div><strong>成約 &lt; 0.5件/月</strong><br><small>→ 営業プロセス見直し</small></div>
+          <div><strong>商談 &lt; 2件/月</strong><br><small>→ リード獲得強化</small></div>
+          <div><strong>CPA &gt; 60万円</strong><br><small>→ チャネル予算見直し</small></div>
+          <div><strong>全体CVR &lt; 0.02%</strong><br><small>→ 戦略全体の見直し</small></div>
+          <div><strong>リード &lt; 40件/月</strong><br><small>→ 集客広告増額</small></div>
         </div>
       </div>
     </section>
 
-    <!-- Conditions for 75M -->
+    <!-- Conditions for Year 2 -->
     <section id="conditions">
       <p class="pill">Growth Scenario</p>
-      <h2>Year 1で7,500万円を狙う条件</h2>
+      <h2>スケールアップの条件（Year 2: 2,200万円）</h2>
 
       <div class="grid-2" style="margin-bottom: 24px;">
         <div class="card">
-          <h3>現実的プラン</h3>
+          <h3>堅実プラン Year 1</h3>
           <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
             <div class="summary-card">
               <div class="label">売上</div>
-              <div class="value" style="font-size: 1.5rem;">3,500万円</div>
+              <div class="value" style="font-size: 1.5rem;">840万円</div>
             </div>
             <div class="summary-card">
               <div class="label">予算</div>
-              <div class="value" style="font-size: 1.5rem;">900万円</div>
+              <div class="value" style="font-size: 1.5rem;">720万円</div>
             </div>
           </div>
         </div>
         <div class="card" style="background: linear-gradient(135deg, rgba(43, 111, 108, 0.1), rgba(43, 111, 108, 0.05));">
-          <h3>7,500万円プラン</h3>
+          <h3>Year 2目標</h3>
           <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
             <div class="summary-card highlight">
               <div class="label">売上</div>
-              <div class="value" style="font-size: 1.5rem;">7,500万円</div>
+              <div class="value" style="font-size: 1.5rem;">2,200万円</div>
             </div>
             <div class="summary-card">
               <div class="label">予算</div>
-              <div class="value" style="font-size: 1.5rem;">1,800万円</div>
+              <div class="value" style="font-size: 1.5rem;">960万円</div>
+              <div class="sub">月80万円</div>
             </div>
           </div>
         </div>
       </div>
 
-      <h3>達成に必要な4つの条件</h3>
+      <h3>Year 2達成に必要な4つの条件</h3>
       <div class="grid" style="gap: 16px;">
         <div class="condition-card">
           <span class="number">1</span>
-          <h4>マーケティング予算の倍増</h4>
-          <p>月75万円 → 月150万円（年間1,800万円）</p>
+          <h4>CVR改善</h4>
+          <p>全体CVR 0.05% → 0.15%（導入事例・LP改善による3倍改善）</p>
         </div>
         <div class="condition-card">
           <span class="number">2</span>
-          <h4>ウェビナーの月4回開催</h4>
-          <p>月2回 → 月4回に増加。申込200名/月を目指す</p>
+          <h4>導入事例</h4>
+          <p>公開事例3件以上。Year 1の導入企業から事例を獲得し、信頼性を向上</p>
         </div>
         <div class="condition-card">
           <span class="number">3</span>
-          <h4>取引先・提携企業への展開</h4>
-          <p>あおぞらケアグループの取引先企業への案内</p>
+          <h4>商談成約率</h4>
+          <p>18%以上を維持。営業スキルの向上と提案力の強化</p>
         </div>
         <div class="condition-card">
           <span class="number">4</span>
-          <h4>業界ネットワークの活用</h4>
-          <p>展示会出展、協会連携、介護メディアへの露出</p>
+          <h4>紹介チャネル</h4>
+          <p>月1件以上の紹介商談。既存顧客・ネットワークからの安定的な紹介</p>
         </div>
       </div>
 
       <div class="card" style="margin-top: 24px; background: linear-gradient(135deg, var(--mint), white);">
-        <h3>7,500万円達成時の収支</h3>
+        <h3>Year 2達成時の収支</h3>
         <table class="data-table">
           <tbody>
             <tr>
               <td>FC売上</td>
-              <td class="number highlight-cell">7,500万円</td>
+              <td class="number highlight-cell">2,200万円</td>
             </tr>
             <tr>
               <td>マーケティング費用</td>
-              <td class="number">△1,800万円</td>
+              <td class="number">△960万円</td>
             </tr>
             <tr>
               <td>その他経費</td>
-              <td class="number">△300万円</td>
+              <td class="number">△250万円</td>
             </tr>
             <tr style="background: rgba(34, 197, 94, 0.1);">
               <td><strong>営業利益</strong></td>
-              <td class="number highlight-cell"><strong>5,400万円（利益率72%）</strong></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h4 style="margin-top: 20px; color: var(--muted);">その他経費内訳（年間300万円）</h4>
-        <table class="data-table" style="font-size: 0.9rem;">
-          <thead>
-            <tr>
-              <th>項目</th>
-              <th class="number">年間費用</th>
-              <th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: rgba(43, 111, 108, 0.1);">
-              <td><strong>展示会・イベント費</strong></td>
-              <td class="number highlight-cell"><strong>150万円</strong></td>
-              <td>出展費、ブース装飾、運営費</td>
-            </tr>
-            <tr>
-              <td>出張・交通費</td>
-              <td class="number">60万円</td>
-              <td>商談訪問、展示会出展時</td>
-            </tr>
-            <tr>
-              <td>印刷・資料費</td>
-              <td class="number">40万円</td>
-              <td>提案資料、パンフレット</td>
-            </tr>
-            <tr>
-              <td>システム追加</td>
-              <td class="number">30万円</td>
-              <td>CRM上位プラン等</td>
-            </tr>
-            <tr>
-              <td>予備費・雑費</td>
-              <td class="number">20万円</td>
-              <td>突発的な施策対応</td>
-            </tr>
-            <tr style="background: var(--cream); font-weight: 600;">
-              <td>合計</td>
-              <td class="number">300万円</td>
-              <td></td>
+              <td class="number highlight-cell"><strong>+990万円</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Q1 Decision Point -->
+    <!-- Q2 Decision Point -->
     <section>
       <p class="pill">Decision Point</p>
-      <h2>Q1終了時点の判断基準</h2>
+      <h2>Q2終了時点の判断基準</h2>
+
+      <div class="card" style="margin-bottom: 24px; background: var(--paper); border-left: 4px solid var(--muted);">
+        <p style="margin: 0; font-size: 0.95rem;"><strong>注意：</strong>Q1単独では判断しない。Q1は仕組み構築期間であり、成約ゼロでも想定内。</p>
+      </div>
 
       <div class="grid">
         <div class="card" style="border-left: 4px solid var(--green);">
           <h3 style="color: var(--green);">好調</h3>
-          <p><strong>成約10件以上、CPA 12万円以下</strong></p>
-          <p style="font-size: 0.9rem;">→ 予算増額を検討（月100万円へ）</p>
+          <p><strong>累計6件以上成約、CPA 50万円以下</strong></p>
+          <p style="font-size: 0.9rem;">→ 予算増額（月80万円へ）</p>
         </div>
         <div class="card" style="border-left: 4px solid var(--blue);">
           <h3 style="color: var(--blue);">順調</h3>
-          <p><strong>成約6-9件、CPA 16万円以下</strong></p>
-          <p style="font-size: 0.9rem;">→ 現行計画を継続</p>
+          <p><strong>累計3-5件成約、CPA 60万円以下</strong></p>
+          <p style="font-size: 0.9rem;">→ 現行計画を継続、Q3で再評価</p>
         </div>
         <div class="card" style="border-left: 4px solid var(--accent);">
           <h3 style="color: var(--accent);">要改善</h3>
-          <p><strong>成約6件未満、CPA 20万円超</strong></p>
-          <p style="font-size: 0.9rem;">→ チャネル配分見直し、施策改善</p>
+          <p><strong>累計2件以下、CPA 80万円超</strong></p>
+          <p style="font-size: 0.9rem;">→ 予算半減（月30万円）または撤退検討</p>
         </div>
       </div>
     </section>
@@ -1221,7 +1265,7 @@
   <button class="back-to-top" id="backToTop" title="トップへ戻る">↑</button>
 
   <footer>
-    ホリエモンAI学校 介護校 KPI・予算計画書（2025年1月版）
+    ホリエモンAI学校 介護校 KPI・予算計画書 堅実プラン（2025年1月版・シビア想定）
   </footer>
 
   <script>
@@ -1247,13 +1291,13 @@
     new Chart(budgetCtx, {
       type: 'doughnut',
       data: {
-        labels: ['Google広告', 'LINE広告', 'Meta広告', 'LinkedIn', 'その他'],
+        labels: ['Google広告', 'Meta広告', 'LINE広告', 'LinkedIn', 'その他(ウェビナー+コンテンツ+ツール)'],
         datasets: [{
-          data: [20, 15, 12, 8, 20],
+          data: [15, 10, 12, 5, 18],
           backgroundColor: [
             '#3b82f6',
-            '#22c55e',
             '#8b5cf6',
+            '#22c55e',
             '#e85d2a',
             '#94a3b8'
           ],
@@ -1281,13 +1325,13 @@
         datasets: [
           {
             label: '予算（万円）',
-            data: [200, 220, 230, 250],
+            data: [170, 175, 185, 190],
             backgroundColor: 'rgba(43, 111, 108, 0.7)',
             borderRadius: 8
           },
           {
-            label: '売上目標（万円）',
-            data: [496, 744, 992, 1240],
+            label: 'FC売上（万円）',
+            data: [47, 140, 233, 326],
             backgroundColor: 'rgba(232, 93, 42, 0.7)',
             borderRadius: 8
           }
@@ -1314,7 +1358,7 @@
         datasets: [
           {
             label: 'リード数',
-            data: [80, 60, 80],
+            data: [14, 27, 36],
             backgroundColor: [
               'rgba(232, 93, 42, 0.7)',
               'rgba(139, 92, 246, 0.7)',
@@ -1324,7 +1368,7 @@
           },
           {
             label: '商談数',
-            data: [9, 6, 4],
+            data: [0.6, 1.4, 0.7],
             backgroundColor: [
               'rgba(232, 93, 42, 0.4)',
               'rgba(139, 92, 246, 0.4)',
@@ -1355,7 +1399,7 @@
         datasets: [
           {
             label: 'リード数',
-            data: [50, 40, 80, 20],
+            data: [8, 8, 15, 2],
             backgroundColor: 'rgba(59, 130, 246, 0.7)',
             borderRadius: 4
           }
@@ -1383,7 +1427,7 @@
         datasets: [
           {
             label: 'FC売上（万円）',
-            data: [496, 744, 992, 1240],
+            data: [47, 140, 233, 326],
             borderColor: '#e85d2a',
             backgroundColor: 'rgba(232, 93, 42, 0.1)',
             fill: true,
@@ -1393,7 +1437,7 @@
           },
           {
             label: '累計売上（万円）',
-            data: [496, 1240, 2232, 3472],
+            data: [47, 187, 419, 745],
             borderColor: '#2b6f6c',
             backgroundColor: 'rgba(43, 111, 108, 0.1)',
             fill: true,
