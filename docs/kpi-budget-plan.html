@@ -485,6 +485,7 @@
       <a href="kpi-evaluation.html">KPI評価</a>
       <a href="changelog.html">変更履歴</a>
       <a href="#summary">サマリー</a>
+      <a href="#budget-guide">予算判断</a>
       <a href="#budget">予算</a>
       <a href="#funnel">ファネル</a>
       <a href="#channels">チャネル</a>
@@ -545,6 +546,139 @@
       <div class="card">
         <h3>投資判断の根拠</h3>
         <p><strong>総投資額1,860万円（マーケ1,560万+その他300万）で3,500万円の売上</strong>を見込みます。CPA 27.9万円、CAC 33.2万円。LTV/CAC = 62万÷33.2万 = 1.87倍。超シビア想定のため健全水準(3倍以上)を大幅に下回るが、Year 2での改善が前提。</p>
+      </div>
+    </section>
+
+    <!-- Budget Decision Guide -->
+    <section id="budget-guide">
+      <p class="pill">Budget Decision Guide</p>
+      <h2>予算判断の見方（いくらかけるか・いくらまでかけるか）</h2>
+
+      <div class="card">
+        <h3>① いくらかければいいか → 目標売上から逆算する</h3>
+        <div style="background: var(--cream); border-radius: var(--radius-md); padding: 24px; font-family: monospace; font-size: 1rem; line-height: 2;">
+          目標売上 3,500万円<br>
+          &nbsp;&nbsp;÷ 平均単価 62万円/件<br>
+          &nbsp;&nbsp;= 必要契約数 <strong>56件</strong><br>
+          &nbsp;&nbsp;× CPA 27.9万円<br>
+          &nbsp;&nbsp;= 必要マーケ予算 <strong>1,560万円（月130万円）</strong>
+        </div>
+        <p style="margin-top: 12px; color: var(--muted);">目標売上が変われば、必要予算も連動して変わります。目標売上を決めることが、予算決定の第一歩です。</p>
+      </div>
+
+      <div class="card">
+        <h3>② いくらまでかけていいか → 3つのラインで判断する</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ライン</th>
+              <th class="number">月間予算</th>
+              <th>判断基準</th>
+              <th>意味</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: var(--mint);">
+              <td><strong>推奨ライン</strong></td>
+              <td class="number"><strong>130万円</strong></td>
+              <td>ROAS 224%</td>
+              <td>目標達成に必要な投資額</td>
+            </tr>
+            <tr style="background: #fef3c7;">
+              <td><strong>上限ライン</strong></td>
+              <td class="number"><strong>146万円</strong></td>
+              <td>ROAS 200%</td>
+              <td>これ以上かけると投資効率が悪化</td>
+            </tr>
+            <tr style="background: #fee2e2;">
+              <td><strong>損益分岐ライン</strong></td>
+              <td class="number"><strong>267万円</strong></td>
+              <td>ROAS 109%</td>
+              <td>これ以上かけると赤字（利益ゼロ）</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 12px;"><strong>判断の原則</strong>: ROAS 200%（投資の2倍回収）を下回る予算投下は行わない。</p>
+      </div>
+
+      <div class="card">
+        <h3>③ 運用中はどの数字を見るか → 3指標を最優先で追う</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>計算式</th>
+              <th class="number">目標値</th>
+              <th class="number">アラート基準</th>
+              <th>頻度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CPA</strong></td>
+              <td>マーケ費 ÷ 成約件数</td>
+              <td class="number"><strong>28万円以下</strong></td>
+              <td class="number">35万円超で対策</td>
+              <td>月次</td>
+            </tr>
+            <tr>
+              <td><strong>CAC</strong></td>
+              <td>総投資額 ÷ 成約件数</td>
+              <td class="number"><strong>33万円以下</strong></td>
+              <td class="number">40万円超で対策</td>
+              <td>月次</td>
+            </tr>
+            <tr>
+              <td><strong>ROAS</strong></td>
+              <td>売上 ÷ マーケ費</td>
+              <td class="number"><strong>224%以上</strong></td>
+              <td class="number">200%割れで見直し</td>
+              <td>月次</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 12px;"><strong>アラート時の対応</strong>:</p>
+        <ul>
+          <li>CPA/CACが上昇 → 効率の悪いチャネルの予算を削減し、ウェビナー比率を上げる</li>
+          <li>ROASが低下 → 予算総額の削減、またはチャネル配分の見直し</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>④ 予算の増減はいつ判断するか → Q1終了時（3ヶ月後）</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>シナリオ</th>
+              <th>判断基準</th>
+              <th>予算の意思決定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: var(--mint);">
+              <td><strong>好調</strong></td>
+              <td>成約10件以上、CPA 25万円以下</td>
+              <td>予算増額を検討</td>
+            </tr>
+            <tr>
+              <td><strong>順調</strong></td>
+              <td>成約6〜9件、CPA 30万円以下</td>
+              <td>現行計画を継続</td>
+            </tr>
+            <tr style="background: #fee2e2;">
+              <td><strong>要改善</strong></td>
+              <td>成約6件未満、CPA 35万円超</td>
+              <td>チャネル配分見直し・施策改善</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="background: var(--ink); color: white; text-align: center; padding: 28px;">
+        <p style="font-size: 1.05rem; line-height: 1.9; margin: 0;">
+          <strong>まとめ</strong>：「いくらかけるか」は目標売上から逆算。「いくらまでかけるか」はROAS 200%ラインが上限。<br>
+          運用開始後は<strong>CPA・CAC・ROAS</strong>の3指標を毎月チェックし、<strong>Q1終了時</strong>に予算の増減を判断する。
+        </p>
       </div>
     </section>
 
